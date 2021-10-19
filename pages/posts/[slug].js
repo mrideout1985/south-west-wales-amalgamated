@@ -1,18 +1,21 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
+import Meta from '../../components/meta/meta'
 
 
 
 export default function Post({ post, morePosts, preview }) {
-  // const router = useRouter()
-  // if (!router.isFallback && !post?.slug) {
-  //   return <ErrorPage statusCode={404} />
-  // }
+  const router = useRouter()
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />
+  }
   return (
-    <div>post</div>
+    <div>
+      <Meta title={post.title}>
+        <meta name="description" content={`${post.title}`} />
+      </Meta>
+    </div>
   )
 }
 

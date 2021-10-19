@@ -1,5 +1,6 @@
 // import { getAllPostsForHome } from "../lib/api";
 import { getHomeData } from "../lib/api";
+import Meta from "../components/meta/meta"
 import SanityBlockContent from "@sanity/block-content-to-react";
 import styles from "../styles/Home.module.scss";
 
@@ -8,7 +9,11 @@ export default function Home({ data, preview }) {
 	// const morePosts = allPosts.slice(1);
 	console.log("data", data);
 	return (
+
 		<div className={styles.container}>
+			<Meta title={"HOME"}>
+				<meta name="description" content="Home" />
+			</Meta>
 			{data &&
 				data.map((home, index) => (
 					<article key={index}>
