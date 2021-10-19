@@ -1,92 +1,79 @@
 import React from "react";
-import styles from "./nav.module.scss";
 import Link from "next/link";
-import { useMedia } from "react-use";
-import { Sidebar } from "../sidebar/sidebar";
+// import { useMedia } from "react-use";
+import styles from "./nav.module.scss"
+// import Sidebar from "../sidebar/sidebar";
 
 const Nav = () => {
-	const isWide = useMedia("(min-width: 800px)");
+	// const isWide = useMedia("(min-width: 800px)");
 
 	return (
-		<>
-			{isWide ? (
-				<nav className={styles.container} aria-label="swwamal">
-					<Link
-						href="/home"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>Home</p>
-						</a>
-					</Link>
-					<Link
-						href="/about"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>About</p>
-						</a>
-					</Link>
-					<Link
-						href="/news"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>News</p>
-						</a>
-					</Link>
-					<Link
-						href="/campaigns"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>Campaigns</p>
-						</a>
-					</Link>
-					<Link
-						href="/agreements"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>Agreements</p>
-						</a>
-					</Link>
-					<Link
-						href="/blog"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>Blog</p>
-						</a>
-					</Link>
-					<NavLink
-						href="/contact"
-						className={styles.navlink}
-						activeClassName={styles.activenavlink}
-						role="menuitem"
-					>
-						<a>
-							<p>Contact</p>
-						</a>
-					</NavLink>
-				</nav>
-			) : (
-				<Sidebar />
-			)}
-		</>
+		<nav className={styles.container} aria-label="swwamal">
+			<Link
+				href="/"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>Home</p>
+
+			</Link>
+			<Link
+				href="/about"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>About</p>
+
+			</Link>
+			<Link
+				href="/news"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>News</p>
+
+			</Link>
+			<Link
+				href="/campaigns"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>Campaigns</p>
+
+			</Link>
+			<Link
+				href="/agreements"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>Agreements</p>
+
+			</Link>
+			<Link
+				href="/blog"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>Blog</p>
+
+			</Link>
+			<Link
+				href="/contact"
+				className={styles.navlink}
+				role="menuitem"
+			>
+
+				<p>Contact</p>
+
+			</Link>
+		</nav>
 	);
 };
 
-export { Nav };
+export default Nav
