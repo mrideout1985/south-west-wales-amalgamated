@@ -11,39 +11,8 @@ export default function Post({ post, morePosts, preview }) {
   // if (!router.isFallback && !post?.slug) {
   //   return <ErrorPage statusCode={404} />
   // }
-  // return (
-  <Layout preview={preview}>
-    <Container>
-      <Header />
-      {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
-      ) : (
-        <>
-          <article>
-            <Head>
-              <title>
-                {post.title} | Next.js Blog Example with {CMS_NAME}
-              </title>
-              {/* <meta property="og:image" content={post.ogImage.url} /> */}
-            </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={post.body} />
-          </article>
-
-          <Comments comments={post.comments} />
-          <Form _id={post._id} />
-
-          <SectionSeparator />
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </>
-      )}
-    </Container>
-  </Layout>
+  return (
+    <div>post</div>
   )
 }
 
