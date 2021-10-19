@@ -1,0 +1,143 @@
+.sidebar-component {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	transform: translateX(-100%);
+	transition: transform 0.15s ease;
+	z-index: 999;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background-color: white;
+	border-right: 2px solid pink;
+	visibility: hidden;
+	padding: 2rem;
+
+	scrollbar-color: yellow blue;
+
+	&-open {
+		transform: translateX(0);
+		visibility: visible;
+	}
+
+	.heading {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		h1 {
+			margin: 0;
+
+			a {
+				font-size: 1.5rem;
+			}
+		}
+
+		span {
+			font-size: 2rem;
+		}
+
+		.close-btn {
+			position: absolute;
+			top: -1rem;
+			right: 0;
+			border: none;
+			outline: none;
+			background: none;
+			opacity: 0;
+			transition: all 3s;
+
+			&[aria-expanded="true"] {
+				opacity: 1;
+			}
+		}
+	}
+
+	.nav-container {
+		padding: 1rem;
+
+		h2 {
+			font-size: 1.2rem;
+		}
+
+		.nav {
+			width: 100%;
+			padding-top: 32px;
+
+			ul {
+				border-top: 1px solid rgba(128, 128, 128, 0.4);
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				padding-top: 16px;
+				list-style: none;
+				li {
+					color: #393737;
+					font-size: 1rem;
+					font-weight: 500;
+					width: 100%;
+					margin: 1rem 0;
+					position: relative;
+
+					a {
+						width: 100%;
+						transition: all 0.25s ease-in-out;
+						position: relative;
+						display: inline-block;
+						padding: 8px 16px;
+
+						&:hover {
+							color: var(--focus);
+						}
+						&:focus {
+							border-bottom: 2px solid var(--focus);
+							outline: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.sidebar-btn {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	transition: transform 0.15s ease;
+	border: none;
+	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	border: 5px solid var(--main-color);
+	padding: 0.5rem;
+	background: none;
+
+	img {
+		height: 2rem;
+	}
+
+	.bar1 {
+	}
+
+	.bar2 {
+	}
+
+	.bar3 {
+	}
+
+	&[aria-expanded="true"] {
+		z-index: 0;
+		transform: translateX(-4rem);
+	}
+
+	&[aria-expanded="false"] {
+		z-index: 0;
+		transform: translateX(0);
+		transition-delay: 0.5s;
+	}
+}

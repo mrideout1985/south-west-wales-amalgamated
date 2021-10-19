@@ -1,0 +1,46 @@
+@import "../../main.scss";
+
+.header {
+	margin: 0.5rem 1rem;
+
+	.container {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		box-sizing: border-box;
+
+		@include respond(phone) {
+			flex-direction: column;
+		}
+
+		h1 {
+			font-family: open sans;
+			font-weight: 700;
+			font-size: 3rem;
+			color: var(--main-color);
+			margin: 0;
+
+			@include respond(phone) {
+				font-size: 1.5rem;
+				margin: 1rem 0 1rem 0;
+				text-align: center;
+			}
+
+			@include respond(tab-land) {
+				font-size: 2rem;
+			}
+		}
+
+		img {
+			height: 7rem;
+			width: 7rem;
+			margin: 0;
+
+			@include respond(phone) {
+				height: 3rem;
+				width: 3rem;
+			}
+		}
+	}
+}
