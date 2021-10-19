@@ -1,4 +1,4 @@
-@import "../../main.scss";
+@import "../../sass/abstracts/mixins";
 
 .header {
 	margin: 0.5rem 1rem;
@@ -29,17 +29,6 @@
 
 			@include respond(tab-land) {
 				font-size: 2rem;
-			}
-		}
-
-		img {
-			height: 7rem;
-			width: 7rem;
-			margin: 0;
-
-			@include respond(phone) {
-				height: 3rem;
-				width: 3rem;
 			}
 		}
 	}
