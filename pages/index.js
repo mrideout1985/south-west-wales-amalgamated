@@ -1,9 +1,9 @@
 // import { getAllPostsForHome } from "../lib/api";
 import { getHomeData } from "../lib/api";
-import styles from "../styles/Home.module.scss";
 import SanityBlockContent from "@sanity/block-content-to-react";
+import styles from "../styles/Home.module.scss";
 
-export default function Index({ data, preview }) {
+export default function Home({ data, preview }) {
 	// const heroPost = allPosts[0];
 	// const morePosts = allPosts.slice(1);
 	console.log("data", data);
