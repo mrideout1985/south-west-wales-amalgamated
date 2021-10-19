@@ -89,10 +89,10 @@
 						padding: 8px 16px;
 
 						&:hover {
-							color: var(--focus);
+							// color: var(--focus);
 						}
 						&:focus {
-							border-bottom: 2px solid var(--focus);
+							// border-bottom: 2px solid var(--focus);
 							outline: 0;
 						}
 					}
@@ -113,7 +113,7 @@
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
-	border: 5px solid var(--main-color);
+	// border: 5px solid var(--main-color);
 	padding: 0.5rem;
 	background: none;
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image"
 import styles from "./sidebar.module.scss";
 import { useClickAway } from "react-use";
-import bars from "./three-bars.svg";
 
 const Sidebar = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -68,7 +68,7 @@ const Sidebar = () => {
 			>
 				<div className={styles["heading"]}>
 					<h1>
-						<NavLink to="/">SWWAMAL</NavLink>
+						<Link href="/">SWWAMAL</Link>
 					</h1>
 				</div>
 				<div className={styles["nav-container"]}>
@@ -104,10 +104,10 @@ const Sidebar = () => {
 				onClick={(e) => handleToggle(e)}
 				aria-expanded={isSidebarOpen}
 			>
-				<img src={bars} alt="bars" />
+				<Image src={"/public/bars.svg"} height={10} width={10} />
 			</button>
 		</>
 	);
 };
 
-export { Sidebar };
+export default Sidebar
