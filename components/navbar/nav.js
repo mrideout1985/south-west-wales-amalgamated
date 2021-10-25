@@ -1,79 +1,130 @@
 import React from "react";
 import Link from "next/link";
-// import { useMedia } from "react-use";
+import { useRouter } from 'next/router'
+import { useMedia } from "react-use";
 import styles from "./nav.module.scss"
-// import Sidebar from "../sidebar/sidebar";
+import Sidebar from "../../components/sidebar/sidebar"
 
 const Nav = () => {
-	// const isWide = useMedia("(min-width: 800px)");
+	const isWide = useMedia("(min-width: 600px)");
+	const router = useRouter()
 
 	return (
-		<nav className={styles.container} aria-label="swwamal">
-			<Link
-				href="/"
-				className={styles.navlink}
-				role="menuitem"
-			>
+		<>
+			{isWide ? (
+				<nav className={styles.container} aria-label="swwamal">
+					<Link
+						href="/"
 
-				<p>Home</p>
+						role="menuitem"
+					>
 
-			</Link>
-			<Link
-				href="/about"
-				className={styles.navlink}
-				role="menuitem"
-			>
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/" ? styles["active"] : ""],
+						].join(" ")}>
+							<p>Home</p>
+						</a>
 
-				<p>About</p>
 
-			</Link>
-			<Link
-				href="/news"
-				className={styles.navlink}
-				role="menuitem"
-			>
+					</Link>
+					<Link
+						href="/about"
+						role="menuitem"
+					>
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/about" ? styles["active"] : ""],
+						].join(" ")} >
+							<p>About</p>
 
-				<p>News</p>
+						</a>
 
-			</Link>
-			<Link
-				href="/campaigns"
-				className={styles.navlink}
-				role="menuitem"
-			>
 
-				<p>Campaigns</p>
+					</Link>
+					<Link
+						href="/news"
+						role="menuitem"
+					>
 
-			</Link>
-			<Link
-				href="/agreements"
-				className={styles.navlink}
-				role="menuitem"
-			>
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/news" ? styles["active"] : ""],
+						].join(" ")}>
 
-				<p>Agreements</p>
 
-			</Link>
-			<Link
-				href="/blog"
-				className={styles.navlink}
-				role="menuitem"
-			>
+							<p>News</p>
 
-				<p>Blog</p>
+						</a>
 
-			</Link>
-			<Link
-				href="/contact"
-				className={styles.navlink}
-				role="menuitem"
-			>
+					</Link>
+					<Link
+						href="/campaigns"
+						role="menuitem"
+					>
 
-				<p>Contact</p>
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/campaigns" ? styles["active"] : ""],
+						].join(" ")}>
 
-			</Link>
-		</nav>
-	);
+							<p>Campaigns</p>
+
+						</a>
+
+
+					</Link>
+					<Link
+						href="/agreements"
+						role="menuitem"
+					>
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/agreements" ? styles["active"] : ""],
+						].join(" ")} >
+
+							<p>Agreements</p>
+
+						</a>
+
+					</Link>
+					<Link
+						href="/blog"
+						role="menuitem"
+					>
+
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/blog" ? styles["active"] : ""],
+						].join(" ")}>
+
+							<p>Blog</p>
+
+						</a>
+
+
+					</Link>
+					<Link
+						href="/contact"
+						role="menuitem"
+					>
+
+						<a className={[
+							[styles["default"]],
+							[router?.pathname === "/contact" ? styles["active"] : ""],
+						].join(" ")}>
+
+							<p>Contact</p>
+
+						</a>
+
+
+					</Link>
+				</nav>
+			) : <Sidebar />}
+		</>
+	)
+
 };
 
 export default Nav

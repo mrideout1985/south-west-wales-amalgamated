@@ -1,56 +1,34 @@
 @import "../../sass//abstracts/mixins";
 
 .container {
-	padding: 0.5rem 1rem;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
-	border: 0.2px solid var(--main-color);
+	background-color: var(--main-color);
+	border: 1px solid var(--main-color);
 
-	.navlink {
+	.default {
+		font-family: Montserrat;
 		text-decoration: none;
-		text-transform: uppercase;
 		width: 100%;
-		height: 100%;
-		background-color: var(--main-color);
-		border: 1px solid #fff;
-		box-sizing: border-box;
-		transition: all 0.25s ease-in-out;
+		text-align: center;
+		font-weight: 600;
+		color: #fff;
 		padding: 0.5rem 1rem;
 
-		@include respond(tab-land) {
-			padding: 0.2rem 0.5rem;
+		@include respond(tab-port) {
+			padding: 0.5rem;
 		}
 
-		p {
-			line-height: 30px;
-			margin: 0;
-			text-align: center;
-			font-family: Arial;
-			font-size: 1.8rem;
-			font-weight: 700;
-			color: #fff;
-			transition: all 0.25s ease;
-
-			@include respond(tab-land) {
-				font-size: 1.2rem;
-			}
-		}
-
-		&:focus {
-			outline: 4px solid #ff36ee;
-			z-index: 99999;
-		}
+		// &:visited {
+		// 	color: var(--second-color);
+		// }
 	}
 
-	.activenavlink {
+	.active {
+		color: var(--main-color);
 		background-color: white;
-		transition: all 0.25s ease-in-out;
-
-		p {
-			color: black;
-		}
 	}
 }

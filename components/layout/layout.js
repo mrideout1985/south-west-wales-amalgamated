@@ -7,8 +7,8 @@ import Nav from "../navbar/nav"
 const Layout = ({ children }) => {
 	return (
 		<>
-			<Header />
 			<main className={styles.container}>
+				<Header />
 				{children}
 			</main>
 			<div>Footer</div>
