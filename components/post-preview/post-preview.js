@@ -11,7 +11,6 @@ export default function PostPreview({
 	coverImage,
 	date,
 	excerpt,
-	author,
 	slug,
 }) {
 

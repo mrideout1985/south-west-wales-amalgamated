@@ -1,5 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import SanityBlockContent from "@sanity/block-content-to-react";
+import Avatar from "../../components/avatar/avatar"
+import styles from "../../styles/Post.module.scss"
+import ErrorPage from 'next/error'
 import { getAllCampaignDataWithSlug, getCampaignsAndMoreCampaigns } from '../../lib/api'
 
 const Campaigns = ({ post, morePosts, preview }) => {
@@ -14,29 +18,25 @@ const Campaigns = ({ post, morePosts, preview }) => {
 				router.isFallback ? (
 					<div>Loading…</div>
 				) : (
-					<>
-						<article>
-							{/* <Head>
-				  <title>
-					{post.title} | Next.js Blog Example with {CMS_NAME}
-				  </title>
-				  {/* <meta property="og:image" content={post.ogImage.url} /> */}
-							{/* </Head> */}
-							{/* <PostHeader
-				  title={post.title}
-				  coverImage={post.coverImage}
-				  date={post.date}
-				  author={post.author}
-				/>
-				<PostBody content={post.body} /> */}{post.title}
-						</article>
 
-						{/* <Comments comments={post.comments} />
-			  <Form _id={post._id} /> */}
+					<article className={styles.container}>
+						<div className={styles.title}>
+							<h2>{post.title}</h2>
+						</div>
 
-						{/* <SectionSeparator /> */}
-						{/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
-					</>
+						<div className={styles.post}>
+							<SanityBlockContent
+								dataset="production"
+								projectId="8bvty42v"
+								blocks={post.body}
+							/>
+						</div>
+						<div className={styles.avatar}>
+							<Avatar name={post.author?.name} picture={post.author?.picture} />
+						</div>
+					</article>
+
+
 				)
 			}
 		</div>

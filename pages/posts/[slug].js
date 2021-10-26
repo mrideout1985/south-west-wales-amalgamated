@@ -1,12 +1,19 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import SanityBlockContent from "@sanity/block-content-to-react";
+import Avatar from "../../components/avatar/avatar"
 import Meta from '../../components/meta/meta'
+import styles from "../../styles/Post.module.scss"
+import CoverImage from '../../components/cover-image/cover-image';
 
 
 
 
 export default function Post({ post, morePosts, preview }) {
+
+  console.log("singlePost", post)
+
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -17,29 +24,25 @@ export default function Post({ post, morePosts, preview }) {
         router.isFallback ? (
           <div>Loading…</div>
         ) : (
-          <>
-            <article>
-              {/* <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
-              {/* </Head> */}
-              {/* <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
+
+          <article className={styles.container}>
+            <div className={styles.title}>
+              <h2>{post.title}</h2>
+            </div>
+
+            <div className={styles.post}>
+              <SanityBlockContent
+                dataset="production"
+                projectId="8bvty42v"
+                blocks={post.body}
               />
-              <PostBody content={post.body} /> */}{post.title}
-            </article>
+            </div>
+            <div className={styles.avatar}>
+              <Avatar name={post.author.name} picture={post.author.picture} />
+            </div>
+          </article>
 
-            {/* <Comments comments={post.comments} />
-            <Form _id={post._id} /> */}
 
-            {/* <SectionSeparator /> */}
-            {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
-          </>
         )
       }
     </div>
@@ -50,7 +53,7 @@ export default function Post({ post, morePosts, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview)
-  console.log("blog slug", data)
+  console.log("blog slug", data.body)
   return {
     props: {
       preview,
