@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroPost from '../components/hero-post/hero-post'
 import { getAllPostsForHome } from '../lib/api'
+import MoreStories from '../components/more-stories/more-stories'
 import styles from "../styles/Blog.module.scss"
 
 
@@ -21,6 +22,8 @@ const Blog = ({ allPosts, preview }) => {
 					excerpt={heroPost.excerpt}
 				/>
 			)}
+			{morePosts.length > 0 && <MoreStories posts={morePosts} />}
+
 		</div>
 	)
 }

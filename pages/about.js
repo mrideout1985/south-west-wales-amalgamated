@@ -21,9 +21,10 @@ const About = ({ data }) => {
 							<div className={styles.image}>
 								<Image
 									tabIndex="0"
+									layout="intrinsic"
 									src={`${about?.image.asset.url}`}
-									height={1000}
-									width={1500}
+									height={500}
+									width={900}
 									alt="headquarters of south west wales amalgamated"
 								/>
 								<div className={styles.block} tabIndex="0">
@@ -32,16 +33,13 @@ const About = ({ data }) => {
 										projectId="8bvty42v"
 										blocks={about.body}
 									/>
+									<SanityBlockContent
+										dataset="production"
+										projectId="8bvty42v"
+										blocks={about.secondBody}
+									/>
 								</div>
 							</div>
-							<div className={styles.block} tabIndex="0">
-								<SanityBlockContent
-									dataset="production"
-									projectId="8bvty42v"
-									blocks={about.secondBody}
-								/>
-							</div>
-
 						</div>
 					</section>
 				))}

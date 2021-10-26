@@ -1,0 +1,20 @@
+.container {
+	font-family: Montserrat;
+	width: 400px;
+	.image {
+		width: 100%;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+
+		a {
+			text-decoration: none;
+			color: black;
+		}
+	}
+
+	.date {
+		margin: 1rem 0 0 0;
+	}
+}

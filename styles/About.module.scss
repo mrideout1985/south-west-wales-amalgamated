@@ -6,9 +6,7 @@
 
 	.data {
 		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
+		justify-content: center;
 
 		@include respond(phone) {
 			.image {
@@ -21,32 +19,27 @@
 			}
 		}
 
-		.block {
-			font-family: Montserrat;
-			color: white;
-			margin: 0 2rem 2rem 2rem;
-
-			p {
-				margin: 0;
-			}
-		}
-
 		.image {
 			display: flex;
 			margin: 2rem;
-			justify-content: space-between;
-			align-items: flex-end;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 
 			img {
 				border-radius: 5px;
 				box-shadow: 2px 2px 50px 6px rgba(53, 46, 46, 0.514);
+				max-width: 600px;
 			}
 
 			.block {
-				margin: 0 0 0 1rem;
+				font-family: Montserrat;
+				color: white;
+				margin: 2rem;
 
-				@include respond(phone) {
-					margin: 0;
+				p {
+					padding: auto;
+					max-width: 800px;
 				}
 			}
 		}

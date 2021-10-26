@@ -5,8 +5,14 @@ import { imageBuilder } from "../../lib/sanity"
 import Link from "next/link"
 import Date from '../date/date'
 import styles from "./hero-post.module.scss"
+import { useRouter } from 'next/router'
+
 
 const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
+
+	const path = useRouter()
+
+
 	const image = (
 		<img
 			width={1240}
@@ -23,7 +29,7 @@ const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
 			<div className={styles.postinfo}>
 				<div className={styles.title_date}>
 					<h3 className={styles.h3}>
-						<Link as={`/posts/${slug}`} href="/posts/[slug]">
+						<Link href={path.asPath === `/blog` ? `/posts/${slug}` : `/campaigns/${slug}`}>
 							<a>{title}</a>
 						</Link>
 					</h3>
@@ -33,7 +39,6 @@ const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
 				</div>
 				<div className={styles.excerpt_author}>
 					<p className={styles.text}>{excerpt}</p>
-					<Avatar name={author?.name} picture={author?.picture} />
 				</div>
 			</div>
 		</section >

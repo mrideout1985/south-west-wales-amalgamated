@@ -5,8 +5,6 @@ function SvgTwitterundraw(props) {
     <svg
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
-      width={1153.088}
-      height={830.283}
       {...props}
     >
       <path

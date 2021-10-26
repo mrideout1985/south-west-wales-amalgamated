@@ -5,7 +5,9 @@ function SvgLocationMarker(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
-      fill="#fff"
+      fill={props.color || "black"}
+      height={props.size || 300}
+      width={props.size || 300}
       {...props}
     >
       <path

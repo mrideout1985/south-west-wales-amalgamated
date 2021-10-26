@@ -2,7 +2,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	min-height: 100%;
+	height: 100%;
 	transform: translateX(-100%);
 	transition: transform 0.15s ease;
 	z-index: 999;
@@ -15,7 +15,7 @@
 	font-family: Montserrat;
 	justify-content: space-around;
 	width: 50%;
-
+	padding: 1rem 0.4rem;
 	.logo {
 		width: 100%;
 		display: flex;
@@ -101,15 +101,6 @@
 
 	img {
 		height: 2rem;
-	}
-
-	.bar1 {
-	}
-
-	.bar2 {
-	}
-
-	.bar3 {
 	}
 
 	&[aria-expanded="true"] {

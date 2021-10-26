@@ -1,0 +1,50 @@
+@import "../sass/abstracts/mixins";
+
+.container {
+	margin: 0 1rem 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--main-color);
+
+	@include respond(phone) {
+		flex-wrap: wrap-reverse;
+		justify-content: flex-start;
+	}
+
+	.twitter-embed {
+		width: 700px;
+		padding: 1rem;
+	}
+
+	.twitter {
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin-top: 1rem;
+
+		.newsheader {
+			padding: 1.5rem;
+
+			p {
+				margin: 1rem 0 0 0;
+				font-size: 1rem;
+				text-align: center;
+				font-family: "Montserrat", sans-serif;
+				color: white;
+			}
+		}
+		img {
+			height: 30rem;
+			width: 25rem;
+			justify-self: flex-end;
+
+			@include respond(phone) {
+				width: 15rem;
+				height: 15rem;
+				display: none;
+			}
+		}
+	}
+}

@@ -7,7 +7,6 @@ import styles from "../styles/Home.module.scss";
 export default function Home({ data, preview }) {
 	// const heroPost = allPosts[0];
 	// const morePosts = allPosts.slice(1);
-	console.log("data", data);
 	return (
 
 		<div className={styles.container}>
@@ -19,10 +18,11 @@ export default function Home({ data, preview }) {
 					<article key={index}>
 						<header>{home.header}</header>
 						<div className={styles["homepage"]}>
-							<img
+
+							{home.image?.asset?.url !== undefined ? <img
 								src={home.image.asset.url}
 								alt="homepageoimage"
-							/>
+							/> : null}
 							<SanityBlockContent
 								dataset="production"
 								projectId="8bvty42v"
