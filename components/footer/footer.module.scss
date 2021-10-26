@@ -1,0 +1,58 @@
+@import "../../sass/abstracts/mixins";
+
+.footer {
+	margin: 0.5rem 1rem;
+	background-color: #ce0f69;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+	font-family: "Montserrat", sans-serif;
+	padding: 1rem;
+
+	@include respond(phone) {
+		justify-content: space-between;
+	}
+
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		@include respond(phone) {
+			justify-content: space-between;
+		}
+		@include respond(tab-port) {
+		}
+
+		p {
+			text-align: right;
+			margin-right: 1rem;
+
+			@include respond(phone) {
+				display: none;
+			}
+
+			@include respond(tab-port) {
+				font-size: 0.8rem;
+			}
+		}
+
+		img {
+			height: 3rem;
+			width: 3rem;
+			margin: 1rem;
+
+			@include respond(phone) {
+				height: 2rem;
+				cursor: pointer;
+			}
+
+			@include respond(tab-port) {
+				height: 5rem;
+				cursor: pointer;
+			}
+		}
+	}
+}
