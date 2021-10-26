@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image"
 import styles from "./sidebar.module.scss";
 import { useClickAway } from "react-use";
-import ThreeBars from "../icons/ThreeBars"
-import CwuLogo from "../icons/CwuLogo"
+import ThreeBars from "../../icons/ThreeBars"
+import CwuLogo from "../../icons/CwuLogo"
 
-const Sidebar = () => {
+const MobileNav = () => {
 
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 	const sidebarRef = useRef();
@@ -20,47 +19,9 @@ const Sidebar = () => {
 		setIsSidebarOpen(!isSidebarOpen);
 	};
 
-	// useEffect(() => {
-	// 	let focusableElements = document.querySelectorAll("a[href]");
-	// 	let firstTabStop = focusableElements[0];
-	// 	let lastTabStop = focusableElements[focusableElements.length - 1];
-
-	// 	console.log(firstTabStop);
-
-	// 	if (isSidebarOpen) {
-	// 		focusableElements = Array.prototype.slice.call([focusableElements]);
-	// 		firstTabStop.focus();
-
-	// 		const handleTabKey = (event) => {
-	// 			if (event.key === "Tab") {
-	// 				if (event.shiftKey) {
-	// 					if (document.activeElement === firstTabStop) {
-	// 						event.preventDefault();
-	// 						lastTabStop.focus();
-	// 					}
-	// 				} else {
-	// 					if (document.activeElement === lastTabStop) {
-	// 						event.preventDefault();
-	// 						firstTabStop.focus();
-	// 					}
-	// 				}
-	// 			}
-	// 		};
-
-	// 		const handleEscapeKey = (event) => {
-	// 			if (event.key === "Escape") {
-	// 				setIsSidebarOpen(!isSidebarOpen);
-	// 			}
-	// 		};
-
-	// 		document.addEventListener("keydown", handleTabKey);
-	// 		document.addEventListener("keydown", handleEscapeKey);
-	// 	}
-	// }, [isSidebarOpen]);
-
 	return (
-		<>
-			<div
+		<header>
+			<nav
 				className={[
 					[styles["sidebar-component"]],
 					[isSidebarOpen ? styles["sidebar-component-open"] : ""],
@@ -94,15 +55,15 @@ const Sidebar = () => {
 						<Link href="/contact">Contact</Link>
 					</li>
 				</ul>
-			</div>
+			</nav>
 			<button
 				className={styles["sidebar-btn"]}
 				onClick={(e) => handleToggle(e)}
 				aria-expanded={isSidebarOpen}>
 				<ThreeBars />
 			</button>
-		</>
+		</header>
 	);
 };
 
-export default Sidebar
+export default MobileNav

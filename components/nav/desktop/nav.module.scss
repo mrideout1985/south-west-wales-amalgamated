@@ -1,7 +1,7 @@
-@import "../../sass//abstracts/mixins";
+@import "../../../sass/abstracts/mixins";
 
 .container {
-	margin: auto;
+	margin: 0.5rem 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -11,6 +11,7 @@
 
 	.default {
 		font-family: Montserrat;
+		text-transform: capitalize;
 		text-decoration: none;
 		width: 100%;
 		text-align: center;
@@ -21,10 +22,6 @@
 		@include respond(tab-port) {
 			padding: 0.5rem;
 		}
-
-		// &:visited {
-		// 	color: var(--second-color);
-		// }
 	}
 
 	.active {

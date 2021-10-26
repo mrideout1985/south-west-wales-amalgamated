@@ -1,0 +1,1 @@
+export const menuLinks = ["home", "about", "news", "campaigns", "agreements", "blog", "contact"]
