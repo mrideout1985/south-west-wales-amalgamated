@@ -2,11 +2,10 @@ import React from "react";
 import Dragon from "../icons/Dragon"
 import CwuLogo from "../icons/CwuLogo"
 import styles from "./header.module.scss";
-import Nav from "../navbar/nav";
 
-const Header = () => {
+const Header = ({ title }) => {
 	return (
-		<header className={styles.header}>
+		<div className={styles.header}>
 			<div className={styles.container}>
 				<h1>South West Wales AMAL</h1>
 				<div className={styles.logos}>
@@ -14,8 +13,7 @@ const Header = () => {
 					<Dragon size={100} />
 				</div>
 			</div>
-			<Nav />
-		</header>
+		</div>
 	);
 };
 

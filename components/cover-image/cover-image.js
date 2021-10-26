@@ -19,7 +19,7 @@ export default function CoverImage({ title, url, imageObject, slug }) {
 	return (
 		<div className={styles.container}>
 			{slug ? (
-				<Link href={path.asPath === `/posts/` ? `/posts/${slug}` : `/campaigns/${slug}`}>
+				<Link href={path.asPath === `/blog` ? `/posts/${slug}` : `/campaigns/${slug}`}>
 					<a aria-label={title}>{image}</a>
 				</Link>
 			) : (
