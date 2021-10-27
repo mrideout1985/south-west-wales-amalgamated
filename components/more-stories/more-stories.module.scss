@@ -1,14 +1,22 @@
+@import "../../sass/abstracts/mixins";
+
 .container {
 	width: 100%;
 	font-family: Montserrat;
+	color: white;
 
 	h2 {
 		font-size: 3rem;
+
+		@include respond(phone) {
+			font-size: 2rem;
+		}
 	}
 
 	.posts {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
+		color: white;
 	}
 }
