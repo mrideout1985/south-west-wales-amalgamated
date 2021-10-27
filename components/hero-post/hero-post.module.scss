@@ -1,3 +1,5 @@
+@import "../../sass/abstracts/mixins";
+
 .container {
 	width: 100%;
 	display: flex;
@@ -13,18 +15,28 @@
 		.title_date {
 			width: 100%;
 			margin: 1rem 0 0 0;
+			text-transform: capitalize;
 			.h3 {
 				font-size: 4rem;
 				margin: 0;
 
 				a {
 					text-decoration: none;
-					color: black;
+					color: white;
+
+					&:visited {
+						color: white;
+					}
+				}
+
+				@include respond(phone) {
+					font-size: 3rem;
 				}
 			}
 			.date {
 				font-size: 1.2rem;
 				margin: 1rem 0.2rem;
+				color: white;
 			}
 		}
 

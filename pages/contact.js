@@ -5,7 +5,6 @@ import styles from "../styles/Contact.module.scss"
 
 const Contact = ({ repData }) => {
 
-	console.log(repData)
 
 	return (
 		<section className={styles.container}>
