@@ -19,14 +19,22 @@ const MobileNav = () => {
 		e.preventDefault();
 		setIsSidebarOpen(!isSidebarOpen);
 	};
+	const hrefs = (link) => {
+		if (link === "home") {
+			return "/"
+		} else {
+			return `/${link}`
+		}
+	}
 
 	const Links = () => menuLinks.map((link) => (
-		<Link key={link} href={`${link === "home" ? '/' : link}`}
+		<Link key={link} href={hrefs(link)}
 			role="menuitem"
 		>
 			{link}
 		</Link>
 	))
+
 
 	return (
 		<header>

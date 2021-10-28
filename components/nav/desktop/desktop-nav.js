@@ -53,10 +53,18 @@ const DesktopNav = () => {
 		return className.join(" ")
 	}
 
-	const Links = () => menuLinks.map((link) => (
+	const hrefs = (link) => {
+		if (link === "home") {
+			return "/"
+		} else {
+			return `/${link}`
+		}
+	}
+
+	const Links = () => menuLinks.map((link, i) => (
 		<Link
-			key={link}
-			href={`${link === "home" ? '/' : link}`}
+			key={i}
+			href={hrefs(link)}
 			role="menuitem"
 		>
 			<a className={classNames(link)}>
