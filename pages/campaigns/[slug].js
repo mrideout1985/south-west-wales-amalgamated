@@ -6,15 +6,11 @@ import styles from "../../styles/Post.module.scss"
 import ErrorPage from 'next/error'
 import { getAllCampaignDataWithSlug, getCampaignsAndMoreCampaigns } from '../../lib/api'
 
-// const Campaigns = ({ post, morePosts, preview }) => {
-
-const Campaigns = () => {
-
-
+const Campaigns = ({ post, morePosts, preview }) => {
 
 	return (
 		<div>
-			{/* <article className={styles.container}>
+			{post && (<article className={styles.container}>
 				<div className={styles.title}>
 					<h2>{post.title !== undefined ? post.title : "Title"}</h2>
 				</div>
@@ -29,36 +25,34 @@ const Campaigns = () => {
 				<div className={styles.avatar}>
 					<Avatar name={post.author?.name} picture={post.author?.picture} />
 				</div>
-			</article> */}
-			123
-
+			</article>)}
 		</div>
 	)
 }
 
 export default Campaigns
 
-// export async function getStaticProps({ params, preview = false }) {
-// 	const data = await getCampaignsAndMoreCampaigns(params.slug, preview)
-// 	return {
-// 		props: {
-// 			preview,
-// 			post: data?.campaigns || null,
-// 			morePosts: data?.morePosts || null,
-// 		},
-// 		revalidate: 1
-// 	}
-// }
+export async function getStaticProps({ params, preview = false }) {
+	const data = await getCampaignsAndMoreCampaigns(params.slug, preview)
+	return {
+		props: {
+			preview,
+			post: data?.campaigns || null,
+			morePosts: data?.morePosts || null,
+		},
+		revalidate: 1
+	}
+}
 
-// export async function getStaticPaths() {
-// 	const allPosts = await getAllCampaignDataWithSlug()
-// 	return {
-// 		paths:
-// 			allPosts?.map((post) => ({
-// 				params: {
-// 					slug: post.slug,
-// 				},
-// 			})) || [],
-// 		fallback: true,
-// 	}
-// }
+export async function getStaticPaths() {
+	const allPosts = await getAllCampaignDataWithSlug()
+	return {
+		paths:
+			allPosts?.map((post) => ({
+				params: {
+					slug: post.slug,
+				},
+			})) || [],
+		fallback: true,
+	}
+}
