@@ -7,11 +7,12 @@ import ErrorPage from 'next/error'
 import { getAllCampaignDataWithSlug, getCampaignsAndMoreCampaigns } from '../../lib/api'
 
 const Campaigns = ({ post, morePosts, preview }) => {
-
 	const router = useRouter()
 	if (!router.isFallback && !post?.slug) {
 		return <ErrorPage statusCode={404} />
 	}
+	console.log(morePosts);
+	console.log(preview)
 	return (
 		<div>
 			{
