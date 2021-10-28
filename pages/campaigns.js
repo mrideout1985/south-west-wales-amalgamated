@@ -6,9 +6,11 @@ import styles from "../styles/Blog.module.scss"
 import Meta from '../components/meta/meta'
 
 
-const Blog = ({ allPosts, preview }) => {
+const Campaigns = ({ allPosts, preview }) => {
 	const heroPost = allPosts[0]
 	const morePosts = allPosts.slice(1)
+
+	console.log(preview)
 
 	return (
 		<div className={styles.container}>
@@ -30,7 +32,7 @@ const Blog = ({ allPosts, preview }) => {
 	)
 }
 
-export default Blog
+export default Campaigns
 
 export async function getStaticProps({ preview = false }) {
 	const allPosts = await getAllPostsForCampaign(preview)

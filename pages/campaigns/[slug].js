@@ -36,8 +36,6 @@ const Campaigns = ({ post, morePosts, preview }) => {
 							<Avatar name={post.author?.name} picture={post.author?.picture} />
 						</div>
 					</article>
-
-
 				)
 			}
 		</div>

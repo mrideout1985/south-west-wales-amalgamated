@@ -8,7 +8,7 @@ const useAgreement = (props) => {
 			.then((data) => setAgreementData(data))
 			.catch(console.error);
 	}, []);
-	return console.log(agreementData)
+	return agreementData
 };
 
 export { useAgreement };
