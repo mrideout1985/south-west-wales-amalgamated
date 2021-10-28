@@ -25,11 +25,11 @@ const Campaigns = ({ post, morePosts, preview }) => {
 						</div>
 
 						<div className={styles.post}>
-							<SanityBlockContent
+							{post.body === undefined ? null : <SanityBlockContent
 								dataset="production"
 								projectId="8bvty42v"
 								blocks={post.body}
-							/>
+							/>}
 						</div>
 						<div className={styles.avatar}>
 							<Avatar name={post.author?.name} picture={post.author?.picture} />
@@ -59,6 +59,7 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
 	const allPosts = await getAllCampaignDataWithSlug()
+	console.log("allPosts", allPosts)
 	return {
 		paths:
 			allPosts?.map((post) => ({
