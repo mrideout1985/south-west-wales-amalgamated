@@ -6,7 +6,7 @@ import styles from "../../styles/Post.module.scss"
 import ErrorPage from 'next/error'
 import { getAllCampaignDataWithSlug, getCampaignsAndMoreCampaigns } from '../../lib/api'
 
-const Campaigns = ({ post }) => {
+const Campaigns = ({ post, morePosts, preview }) => {
 
 	return (
 		<div>
@@ -48,7 +48,6 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
 	const allPosts = await getAllCampaignDataWithSlug()
-	console.log("allPosts", allPosts)
 	return {
 		paths:
 			allPosts?.map((post) => ({
