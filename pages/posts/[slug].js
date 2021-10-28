@@ -30,11 +30,11 @@ export default function Post({ post, morePosts, preview }) {
             </div>
 
             <div className={styles.post}>
-              <SanityBlockContent
+              {post.body === undefined ? null : <SanityBlockContent
                 dataset="production"
                 projectId="8bvty42v"
                 blocks={post.body}
-              />
+              />}
             </div>
             <div className={styles.avatar}>
               <Avatar name={post.author.name} picture={post.author.picture} />
