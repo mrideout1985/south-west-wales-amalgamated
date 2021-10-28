@@ -4,6 +4,7 @@ import styles from "./sidebar.module.scss";
 import { useClickAway } from "react-use";
 import ThreeBars from "../../icons/ThreeBars"
 import CwuLogo from "../../icons/CwuLogo"
+import { menuLinks } from "../../../assets/menulinks";
 
 const MobileNav = () => {
 
@@ -19,6 +20,14 @@ const MobileNav = () => {
 		setIsSidebarOpen(!isSidebarOpen);
 	};
 
+	const Links = () => menuLinks.map((link) => (
+		<Link key={link} href={`${link === "home" ? '/' : link}`}
+			role="menuitem"
+		>
+			{link}
+		</Link>
+	))
+
 	return (
 		<header>
 			<nav
@@ -30,31 +39,9 @@ const MobileNav = () => {
 				aria-label="sidebar"
 			>
 				<div className={styles.logo}>
-					<CwuLogo size={100} />
+					<CwuLogo size={150} />
 				</div>
-				<ul>
-					<li>
-						<Link href="/">Home</Link>
-					</li>
-					<li>
-						<Link href="/about">About</Link>
-					</li>
-					<li>
-						<Link href="/news">News</Link>
-					</li>
-					<li>
-						<Link href="/campaigns">Campaigns</Link>
-					</li>
-					<li>
-						<Link href="/agreements">Agreements</Link>
-					</li>
-					<li>
-						<Link href="/blog">Blog</Link>
-					</li>
-					<li>
-						<Link href="/contact">Contact</Link>
-					</li>
-				</ul>
+				<Links />
 			</nav>
 			<button
 				className={styles["sidebar-btn"]}
