@@ -2,6 +2,7 @@ import React from 'react'
 import HeroPost from '../components/hero-post/hero-post'
 import { getAllPostsForHome } from '../lib/api'
 import MoreStories from '../components/more-stories/more-stories'
+import Meta from '../components/meta/meta'
 import styles from "../styles/Blog.module.scss"
 
 
@@ -12,6 +13,9 @@ const Blog = ({ allPosts, preview }) => {
 	console.log("preview", preview)
 	return (
 		<div className={styles.container}>
+			<Meta title={"BLOG"}>
+				<meta name="description" content="Blog" />
+			</Meta>
 			{heroPost && (
 				<HeroPost
 					title={heroPost.title}

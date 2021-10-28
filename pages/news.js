@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "../styles/News.module.scss"
 import { useMedia } from 'react-use';
 import { Timeline } from 'react-twitter-widgets';
+import Meta from '../components/meta/meta';
 
 const News = () => {
 
@@ -9,6 +10,9 @@ const News = () => {
 
 	return (
 		<section className={styles.container}>
+			<Meta title={"NEWS"}>
+				<meta name="description" content="News" />
+			</Meta>
 			<div
 				className={styles["twitter-embed"]}
 				id={"twitter"}

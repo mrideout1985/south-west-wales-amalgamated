@@ -3,6 +3,7 @@ import HeroPost from '../components/hero-post/hero-post'
 import { getAllPostsForCampaign } from '../lib/api'
 import MoreStories from '../components/more-stories/more-stories'
 import styles from "../styles/Blog.module.scss"
+import Meta from '../components/meta/meta'
 
 
 const Blog = ({ allPosts, preview }) => {
@@ -11,6 +12,9 @@ const Blog = ({ allPosts, preview }) => {
 
 	return (
 		<div className={styles.container}>
+			<Meta title={"CAMPAIGNS"}>
+				<meta name="description" content="Campaigns" />
+			</Meta>
 			{heroPost && (
 				<HeroPost
 					title={heroPost.title}

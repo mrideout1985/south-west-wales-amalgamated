@@ -4,7 +4,6 @@ import Image from "next/image"
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Meta from '../components/meta/meta'
 import styles from "../styles/About.module.scss";
-import imageUrlBuilder from "@sanity/image-url";
 
 
 

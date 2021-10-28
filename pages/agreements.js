@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { getAgreementsData } from "../lib/api"
 import { useAgreement } from '../hooks/useAgreement'
+import Meta from "../components/meta/meta"
 
 const Agreements = ({ data }) => {
 	const [agreement, setAgreement] = useState()
@@ -22,6 +23,9 @@ const Agreements = ({ data }) => {
 	return (
 
 		<div>
+			<Meta title={"AGREEMENTS"}>
+				<meta name="description" content="Agreements" />
+			</Meta>
 		</div>
 	)
 }
