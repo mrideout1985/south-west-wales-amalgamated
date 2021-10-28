@@ -12,7 +12,7 @@ const Campaigns = ({ post, morePosts, preview }) => {
 		<div>
 			<article className={styles.container}>
 				<div className={styles.title}>
-					<h2>{post.title}</h2>
+					<h2>{post.title !== undefined ? post.title : "Title"}</h2>
 				</div>
 
 				<div className={styles.post}>
