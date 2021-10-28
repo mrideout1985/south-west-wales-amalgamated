@@ -9,8 +9,7 @@ import styles from "../styles/Blog.module.scss"
 const Blog = ({ allPosts, preview }) => {
 	const heroPost = allPosts[0]
 	const morePosts = allPosts.slice(1)
-	console.log("heropost", heroPost)
-	console.log("preview", preview)
+
 	return (
 		<div className={styles.container}>
 			<Meta title={"BLOG"}>

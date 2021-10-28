@@ -12,7 +12,6 @@ import CoverImage from '../../components/cover-image/cover-image';
 
 export default function Post({ post, morePosts, preview }) {
 
-  console.log("singlePost", post)
 
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
@@ -53,7 +52,6 @@ export default function Post({ post, morePosts, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview)
-  console.log("blog slug", data.body)
   return {
     props: {
       preview,

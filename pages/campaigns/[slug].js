@@ -47,7 +47,6 @@ export default Campaigns
 
 export async function getStaticProps({ params, preview = false }) {
 	const data = await getCampaignsAndMoreCampaigns(params.slug, preview)
-	console.log("campaign slug", data)
 	return {
 		props: {
 			preview,
