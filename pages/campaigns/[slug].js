@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Avatar from "../../components/avatar/avatar"
 import styles from "../../styles/Post.module.scss"
-import ErrorPage from 'next/error'
 import { getAllCampaignDataWithSlug, getCampaignsAndMoreCampaigns } from '../../lib/api'
 
 const Campaigns = ({ post, morePosts, preview }) => {
@@ -45,14 +44,10 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export async function getStaticPaths() {
-	const allPosts = await getAllCampaignDataWithSlug()
+	// const allPosts = await getAllCampaignDataWithSlug()
 	return {
-		paths:
-			allPosts?.map((post) => ({
-				params: {
-					slug: post.slug,
-				},
-			})) || [],
+		paths: [],
+
 		fallback: true,
 	}
 }
