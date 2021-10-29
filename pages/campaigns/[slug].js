@@ -44,10 +44,14 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export async function getStaticPaths() {
-	// const allPosts = await getAllCampaignDataWithSlug()
+	const allPosts = await getAllCampaignDataWithSlug()
 	return {
-		paths: [],
-
+		paths:
+			allPosts?.map((post) => ({
+				params: {
+					slug: post.slug,
+				},
+			})) || [],
 		fallback: true,
 	}
 }
