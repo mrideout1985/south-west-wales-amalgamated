@@ -1,0 +1,66 @@
+@import "../sass/abstracts/mixins";
+
+.agreements {
+	width: 100%;
+	transition: all 1s ease;
+	font-family: Open sans;
+	background-color: var(--second-color);
+
+	.nav-links {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		.links {
+			color: white;
+			position: relative;
+			text-align: center;
+			width: 100%;
+			padding: 0.5rem 1rem;
+			margin: 0.2rem;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: all 0.25s ease;
+
+			@include respond(phone) {
+				padding: 1rem 0;
+				font-size: 0.8rem;
+			}
+
+			&:hover {
+				background-color: white;
+				color: black;
+			}
+		}
+	}
+}
+
+.agreements-container {
+	background-color: var(--second-color);
+	width: 100%;
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fill, 186px);
+	justify-content: center;
+
+	.policies {
+		height: 10rem;
+		width: 10rem;
+		background-color: var(--main-color);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1rem;
+		text-decoration: none;
+		text-transform: capitalize;
+		text-align: center;
+		color: white;
+		font-family: "Montserrat", sans-serif;
+		border: 1px solid var(--main-color);
+		transition: all 0.25s ease;
+
+		&:hover {
+			border: 1px solid white;
+		}
+	}
+}
