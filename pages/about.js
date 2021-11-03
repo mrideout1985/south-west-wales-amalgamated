@@ -16,6 +16,9 @@ const About = ({ data }) => {
 						<Meta title={"ABOUT"}>
 							<meta name="description" content="About" />
 						</Meta>
+						<div className={styles.pagetitle}>
+							<h1>About</h1>
+						</div>
 						<div className={styles.data}>
 							<div className={styles.image}>
 								<Image

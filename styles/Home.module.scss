@@ -9,6 +9,22 @@
 		margin: 0;
 	}
 
+	.pagetitle {
+		width: 100%;
+		font-family: montserrat;
+		margin: 0;
+
+		h1 {
+			font-size: 3rem;
+			color: var(--main-color);
+			padding: 0.2rem;
+
+			@include respond(phone) {
+				font-size: 2.2rem;
+			}
+		}
+	}
+
 	article {
 		width: 100%;
 		header {

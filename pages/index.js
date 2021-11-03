@@ -7,13 +7,16 @@ export default function Home({ data, preview }) {
 
 
 	return (
-		<div div className={styles.container} >
+		<section div className={styles.container} >
 			<Meta title={"HOME"}>
 				<meta name="description" content="Home" />
 			</Meta>
 			{
 				data && data.map((home, index) => (
 					<article key={index}>
+						<div className={styles.pagetitle}>
+							<h1>Home</h1>
+						</div>
 						<header>{home.header}</header>
 						<div className={styles["homepage"]}>
 							<div className={styles.section1}>
@@ -42,7 +45,7 @@ export default function Home({ data, preview }) {
 					</article>
 				))
 			}
-		</div >
+		</section >
 	);
 }
 

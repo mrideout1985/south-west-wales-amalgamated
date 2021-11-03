@@ -15,6 +15,9 @@ const Blog = ({ allPosts, preview }) => {
 			<Meta title={"BLOG"}>
 				<meta name="description" content="Blog" />
 			</Meta>
+			<div className={styles.pagetitle}>
+				<h1>Blog</h1>
+			</div>
 			{heroPost && (
 				<HeroPost
 					title={heroPost.title}

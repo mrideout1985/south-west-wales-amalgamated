@@ -13,10 +13,14 @@ const Campaigns = ({ allPosts, preview }) => {
 	console.log(preview)
 
 	return (
-		<div className={styles.container}>
+		<section className={styles.container}>
 			<Meta title={"CAMPAIGNS"}>
 				<meta name="description" content="Campaigns" />
 			</Meta>
+			<div className={styles.pagetitle}>
+				<h1>Campaigns</h1>
+			</div>
+
 			{heroPost && (
 				<HeroPost
 					title={heroPost.title}
@@ -28,7 +32,7 @@ const Campaigns = ({ allPosts, preview }) => {
 				/>
 			)}
 			{morePosts.length > 0 && <MoreStories posts={morePosts} />}
-		</div>
+		</section>
 	)
 }
 

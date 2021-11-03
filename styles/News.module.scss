@@ -1,67 +1,86 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-	margin: 0 1rem 0 1rem;
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
 	background-color: var(--second-color);
 	border-radius: 15px;
+	margin: 0.5rem 1rem;
 
-	@include respond(phone) {
-		flex-wrap: wrap-reverse;
-		justify-content: flex-start;
-		margin: 0;
-	}
-
-	.twitter-embed {
-		width: 700px;
-		padding: 1rem;
-	}
-
-	.twitter {
-		align-self: flex-start;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	.pagetitle {
 		width: 100%;
-		margin-top: 1rem;
+		font-family: montserrat;
+		margin: 0;
 
-		.newsheader {
-			padding: 1.5rem;
+		h1 {
+			font-size: 3rem;
+			color: white;
 
-			p {
-				margin: 1rem 0 0 0;
-				font-size: 2.5rem;
-				font-weight: 500;
-				font-family: montserrat;
-				text-align: center;
-				font-family: "Montserrat", sans-serif;
-				color: white;
+			@include respond(phone) {
+				font-size: 2.2rem;
+			}
+		}
+	}
+
+	.twittercontainer {
+		display: flex;
+
+		@include respond(phone) {
+			flex-wrap: wrap-reverse;
+			justify-content: flex-start;
+			margin: 0;
+		}
+		.twitter-embed {
+			width: 700px;
+			padding: 1rem;
+		}
+
+		.twitter {
+			align-self: flex-start;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			margin-top: 1rem;
+
+			.newsheader {
+				padding: 1.5rem;
+
+				p {
+					margin: 1rem 0 0 0;
+					font-size: 2.5rem;
+					font-weight: 500;
+					font-family: montserrat;
+					text-align: center;
+					font-family: "Montserrat", sans-serif;
+					color: white;
+
+					@include respond(tab-port) {
+						font-size: 1.5rem;
+					}
+
+					@include respond(phone) {
+						font-size: 1rem;
+					}
+				}
+			}
+			img {
+				height: 30rem;
+				width: 25rem;
+				justify-self: flex-end;
+				border-radius: 15px;
 
 				@include respond(tab-port) {
-					font-size: 1.5rem;
+					width: 10rem;
+					height: 10rem;
 				}
 
 				@include respond(phone) {
-					font-size: 1rem;
+					width: 15rem;
+					height: 15rem;
+					display: none;
 				}
-			}
-		}
-		img {
-			height: 30rem;
-			width: 25rem;
-			justify-self: flex-end;
-			border-radius: 15px;
-
-			@include respond(tab-port) {
-				width: 10rem;
-				height: 10rem;
-			}
-
-			@include respond(phone) {
-				width: 15rem;
-				height: 15rem;
-				display: none;
 			}
 		}
 	}

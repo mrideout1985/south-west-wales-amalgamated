@@ -36,6 +36,9 @@ const Agreements = ({ data }) => {
 			<Meta title={"AGREEMENTS"}>
 				<meta name="description" content="Agreements" />
 			</Meta>
+			<div className={styles.pagetitle}>
+				<h1>Agreements</h1>
+			</div>
 			<div className={styles["nav-links"]}>
 				{handleButtons()}
 			</div>

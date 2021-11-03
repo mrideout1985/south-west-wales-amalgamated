@@ -13,35 +13,43 @@ const News = () => {
 			<Meta title={"NEWS"}>
 				<meta name="description" content="News" />
 			</Meta>
-			<div
-				className={styles["twitter-embed"]}
-				id={"twitter"}
-				tabIndex="0"
-			>
-				{
 
-					<Timeline
-						dataSource={{
-							sourceType: "profile",
-							screenName: "w_cwu"
-						}}
-						options={{
-							height: `${phone ? "1000px" : "500px"}`
-						}}
-					/>
-
-				}
+			<div className={styles.pagetitle}>
+				<h1>News</h1>
 			</div>
-			<div className={styles.twitter}>
-				<div className={styles.newsheader}>
-					<p>
-						Keep up to date with all the latest news / campaigns.
-						Follow our social media websites for constant updates
-						and information straight frm the source
-					</p>
+
+			<div className={styles.twittercontainer}>
+				<div
+					className={styles["twitter-embed"]}
+					id={"twitter"}
+					tabIndex="0"
+				>
+					{
+
+						<Timeline
+							dataSource={{
+								sourceType: "profile",
+								screenName: "w_cwu"
+							}}
+							options={{
+								height: `${phone ? "1000px" : "500px"}`
+							}}
+						/>
+
+					}
 				</div>
-				<img src={"/twitter.png"} alt="twitter" />
+				<div className={styles.twitter}>
+					<div className={styles.newsheader}>
+						<p>
+							Keep up to date with all the latest news / campaigns.
+							Follow our social media websites for constant updates
+							and information straight frm the source
+						</p>
+					</div>
+					<img src={"/twitter.png"} alt="twitter" />
+				</div>
 			</div>
+
 		</section>
 	);
 };

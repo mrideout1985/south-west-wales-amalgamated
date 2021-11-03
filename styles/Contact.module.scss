@@ -2,9 +2,27 @@
 
 .container {
 	margin: 0.5rem 1rem;
-	padding: 1rem;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 1rem;
+
+	.pagetitle {
+		width: 100%;
+		font-family: montserrat;
+		margin: 0;
+
+		h1 {
+			font-size: 3rem;
+			color: var(--main-color);
+			padding: 0.2rem;
+
+			@include respond(phone) {
+				font-size: 2.2rem;
+			}
+		}
+	}
+
+	.cards {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
 }
