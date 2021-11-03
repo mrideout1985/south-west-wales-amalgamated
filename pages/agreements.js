@@ -6,6 +6,7 @@ import Meta from "../components/meta/meta"
 
 const Agreements = ({ data }) => {
 	const [agreement, setAgreement] = useState()
+	const [selected, setIsSelected] = useState(0)
 	const displayAgreement = useAgreement(agreement)
 
 
@@ -16,14 +17,21 @@ const Agreements = ({ data }) => {
 		return filteredPolicyRefs
 	}
 
+	const handleTab = (category, number) => {
+		setAgreement(category)
+		console.log(category)
+		setIsSelected(number)
+		console.log(number)
+	}
 	const handleButtons = () => {
 		let names = ["other", "postal", "time-off", "parcel force"]
 		return filterCategories().map((category, i) => {
 			return (
-				<button className={styles.links} key={i} onClick={() => setAgreement(category)}>{names[i]}</button>
+				<button className={selected === i ? styles.active : styles.links} key={i} onClick={() => handleTab(category, i)}>{names[i]}</button>
 			)
 		})
 	}
+
 
 	useEffect(() => {
 		if (data && data[0].categories[0]) {

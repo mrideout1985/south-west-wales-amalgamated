@@ -26,11 +26,9 @@
 	.nav-links {
 		width: 100%;
 		display: flex;
-		gap: 1rem;
 
 		.links {
 			color: white;
-			box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 			position: relative;
 			text-align: center;
 			padding: 0.5rem 1rem;
@@ -44,16 +42,32 @@
 			font-weight: 500;
 			z-index: 1;
 			margin-top: 2rem;
-			border-radius: 15px;
 
 			@include respond(phone) {
 				padding: 0.5rem 1rem;
 				font-size: 0.8rem;
 			}
+		}
 
-			&:hover {
-				background-color: var(--main-color);
-				color: #fff;
+		.active {
+			position: relative;
+			text-align: center;
+			padding: 0.5rem 1rem;
+			font-family: montserrat;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: all 0.45s ease;
+			border: none;
+			text-transform: capitalize;
+			color: white;
+			font-weight: 500;
+			z-index: 1;
+			margin-top: 2rem;
+			background-color: var(--second-color);
+
+			@include respond(phone) {
+				padding: 0.5rem 1rem;
+				font-size: 0.8rem;
 			}
 		}
 	}
@@ -65,6 +79,7 @@
 	grid-gap: 1rem;
 	grid-template-columns: repeat(auto-fill, 186px);
 	justify-content: left;
+	background-color: var(--second-color);
 
 	.policies {
 		height: 10rem;
