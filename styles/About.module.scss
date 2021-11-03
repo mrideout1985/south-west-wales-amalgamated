@@ -1,8 +1,6 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-	margin: 0.5rem 1rem;
-
 	@include respond(phone) {
 		margin: 0;
 	}
@@ -26,7 +24,7 @@
 	.data {
 		display: flex;
 		justify-content: center;
-		background-color: var(--main-color);
+		background-color: var(--second-color);
 		border-radius: 15px;
 
 		@include respond(phone) {
@@ -52,8 +50,8 @@
 
 			img {
 				border-radius: 5px;
-				box-shadow: 2px 2px 50px 6px rgba(53, 46, 46, 0.514);
-				max-width: 600px;
+				box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+				width: 100%;
 			}
 
 			.block {

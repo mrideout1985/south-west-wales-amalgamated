@@ -1,7 +1,6 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-	margin: 0.5rem 1rem;
 	color: var(--main-color);
 	height: 100%;
 
@@ -27,6 +26,7 @@
 
 	article {
 		width: 100%;
+
 		header {
 			font-size: 2.5rem;
 			font-weight: 500;
@@ -46,12 +46,14 @@
 			font-weight: 100;
 			letter-spacing: 0.1rem;
 			font-size: 1.2rem;
+
 			.section1 {
 				display: flex;
 				justify-content: space-around;
 				border-radius: 15px;
 				align-items: flex-start;
 				background-color: var(--second-color);
+
 				color: #fff;
 				padding: 1rem;
 				margin: 1rem 0 0 0;

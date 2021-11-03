@@ -3,7 +3,6 @@
 .agreements {
 	transition: all 1s ease;
 	font-family: Open sans;
-	margin: 0.5rem 1rem;
 
 	@include respond(phone) {
 		margin: 0;
@@ -27,13 +26,13 @@
 	.nav-links {
 		width: 100%;
 		display: flex;
-		justify-content: space-between;
+		gap: 1rem;
 
 		.links {
 			color: white;
+			box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 			position: relative;
 			text-align: center;
-			width: 100%;
 			padding: 0.5rem 1rem;
 			font-family: montserrat;
 			font-size: 1rem;
@@ -48,7 +47,7 @@
 			border-radius: 15px;
 
 			@include respond(phone) {
-				padding: 0.5rem 0;
+				padding: 0.5rem 1rem;
 				font-size: 0.8rem;
 			}
 
@@ -65,7 +64,7 @@
 	display: grid;
 	grid-gap: 1rem;
 	grid-template-columns: repeat(auto-fill, 186px);
-	justify-content: center;
+	justify-content: left;
 
 	.policies {
 		height: 10rem;

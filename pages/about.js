@@ -21,12 +21,9 @@ const About = ({ data }) => {
 						</div>
 						<div className={styles.data}>
 							<div className={styles.image}>
-								<Image
+								<img
 									tabIndex="0"
-									layout="intrinsic"
 									src={`${about?.image.asset.url}`}
-									height={500}
-									width={900}
 									alt="headquarters of south west wales amalgamated"
 								/>
 								<div className={styles.block} tabIndex="0">

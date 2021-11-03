@@ -3,11 +3,11 @@ import Meta from "../components/meta/meta"
 import SanityBlockContent from "@sanity/block-content-to-react";
 import styles from "../styles/Home.module.scss";
 
-export default function Home({ data, preview }) {
+export default function Home({ data }) {
 
 
 	return (
-		<section div className={styles.container} >
+		<section className={styles.container} >
 			<Meta title={"HOME"}>
 				<meta name="description" content="Home" />
 			</Meta>
@@ -21,7 +21,7 @@ export default function Home({ data, preview }) {
 						<div className={styles.section1}>
 							{home.image?.asset?.url !== undefined ? <img
 								src={home.image.asset.url}
-								alt="homepageimage"
+								alt="homepageoimage"
 							/> : null}
 							<div className={styles.block1}>
 								<SanityBlockContent
@@ -31,7 +31,7 @@ export default function Home({ data, preview }) {
 								/>
 							</div>
 						</div>
-						{!home.moreInfo ? null : (<div className={styles.section2}>
+						{!home.moreInfo ? null : <div className={styles.section2}>
 							<div className={styles.block2}>
 								<SanityBlockContent
 									dataset="production"
@@ -39,7 +39,7 @@ export default function Home({ data, preview }) {
 									blocks={home?.moreInfo}
 								/>
 							</div>
-						</div>)}
+						</div>}
 					</div>
 				</article>
 			))
@@ -47,14 +47,6 @@ export default function Home({ data, preview }) {
 		</section >
 	);
 }
-
-// export async function getStaticProps({ preview = false }) {
-// 	const allPosts = await getAllPostsForHome(preview);
-// 	return {
-// 		props: { allPosts, preview },
-// 		revalidate: 1,
-// 	};
-// }
 
 export async function getStaticProps() {
 	const homeData = await getHomeData();
