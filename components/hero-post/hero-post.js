@@ -34,9 +34,6 @@ const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
 						<Date dateString={date} />
 					</div>
 				</div>
-				<div className={styles.excerpt_author}>
-					<p className={styles.text}>{excerpt}</p>
-				</div>
 			</div>
 		</section >
 	)
