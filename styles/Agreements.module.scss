@@ -5,6 +5,10 @@
 	font-family: Open sans;
 	margin: 0.5rem 1rem;
 
+	@include respond(phone) {
+		margin: 0;
+	}
+
 	.pagetitle {
 		width: 100%;
 		font-family: montserrat;
@@ -31,26 +35,32 @@
 			text-align: center;
 			width: 100%;
 			padding: 0.5rem 1rem;
-			margin: 0.2rem;
+			font-family: montserrat;
 			font-size: 1rem;
 			cursor: pointer;
-			transition: all 0.25s ease;
+			transition: all 0.45s ease;
+			border: none;
+			text-transform: capitalize;
+			color: var(--main-color);
+			font-weight: 500;
+			z-index: 1;
+			margin-top: 2rem;
+			border-radius: 15px;
 
 			@include respond(phone) {
-				padding: 1rem 0;
+				padding: 0.5rem 0;
 				font-size: 0.8rem;
 			}
 
 			&:hover {
-				background-color: white;
-				color: black;
+				background-color: var(--main-color);
+				color: #fff;
 			}
 		}
 	}
 }
 
 .agreements-container {
-	background-color: var(--second-color);
 	width: 100%;
 	display: grid;
 	grid-gap: 1rem;
@@ -72,9 +82,10 @@
 		font-family: "Montserrat", sans-serif;
 		border: 1px solid var(--main-color);
 		transition: all 0.25s ease;
+		border-radius: 15px;
 
 		&:hover {
-			border: 1px solid white;
+			transform: scale(1.1);
 		}
 	}
 }
