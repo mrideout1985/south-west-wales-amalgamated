@@ -9,10 +9,7 @@ import { useRouter } from 'next/router'
 
 
 const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
-
 	const path = useRouter()
-
-
 	const image = (
 		<img
 			width={1240}

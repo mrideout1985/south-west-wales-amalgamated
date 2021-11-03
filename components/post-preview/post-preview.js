@@ -10,7 +10,6 @@ export default function PostPreview({
 	title,
 	coverImage,
 	date,
-	excerpt,
 	slug,
 }) {
 
@@ -29,8 +28,6 @@ export default function PostPreview({
 			<div className={styles.date} >
 				<Date dateString={date} />
 			</div>
-			<p>{excerpt}</p>
-			{/* <Avatar name={author?.name} picture={author?.picture} /> */}
 		</div>
 	)
 }

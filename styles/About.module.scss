@@ -3,6 +3,7 @@
 .container {
 	margin: 0 1rem;
 	background-color: var(--main-color);
+	border-radius: 15px;
 
 	.data {
 		display: flex;
@@ -11,6 +12,9 @@
 		@include respond(phone) {
 			.image {
 				flex-direction: column;
+				img {
+					border-radius: 15px;
+				}
 				.block {
 					p {
 						margin-top: 2rem;
@@ -38,8 +42,6 @@
 				margin: 2rem;
 
 				p {
-					padding: auto;
-					max-width: 800px;
 				}
 			}
 		}

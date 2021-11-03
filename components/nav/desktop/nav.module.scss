@@ -2,30 +2,56 @@
 
 .container {
 	margin: 0.5rem 1rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: row;
-	background-color: var(--main-color);
-	border: 1px solid var(--main-color);
 
-	.default {
-		font-family: Montserrat;
-		text-transform: capitalize;
-		text-decoration: none;
+	.nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		width: 100%;
-		text-align: center;
-		font-weight: 600;
-		color: #fff;
-		padding: 0.5rem 1rem;
 
 		@include respond(tab-port) {
-			padding: 0.5rem;
+			flex-direction: column;
 		}
-	}
 
-	.active {
-		color: var(--main-color);
-		background-color: white;
+		.logo {
+		}
+
+		.links {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.default {
+				font-family: Montserrat;
+				text-transform: capitalize;
+				text-decoration: none;
+				text-align: center;
+				font-size: 1rem;
+				font-weight: 600;
+				color: var(--main-color);
+				padding: 0.5rem 1rem;
+				transition: all 0.25s ease;
+
+				@include respond(tab-port) {
+					padding: 0.5rem;
+				}
+			}
+
+			.active {
+				color: var(--main-color);
+				position: relative;
+				transition: all 0.25s ease;
+
+				&::after {
+					position: absolute;
+					content: "";
+					bottom: 1rem;
+					left: 0;
+					width: 100%;
+					height: 0.2rem;
+					background-color: var(--main-color);
+				}
+			}
+		}
 	}
 }

@@ -3,8 +3,10 @@ import { useRouter } from "next/router";
 import { menuLinks } from "../../../assets/menulinks";
 import Link from "next/link";
 import styles from "./nav.module.scss"
+import SvgCwuLogo from "../../icons/CwuLogo";
 
 const DesktopNav = () => {
+
 	const router = useRouter()
 
 	// useEffect(() => {
@@ -74,9 +76,17 @@ const DesktopNav = () => {
 	))
 
 	return (
-		<nav className={styles.container} aria-label="swwamal">
-			<Links />
-		</nav>
+		<header className={styles.container} aria-label="swwamal">
+			<nav className={styles.nav}>
+				<div className={styles.logo}>
+					<SvgCwuLogo size={100} />
+				</div>
+				<div className={styles.links}>
+					<Links />
+				</div>
+			</nav>
+
+		</header>
 	)
 }
 

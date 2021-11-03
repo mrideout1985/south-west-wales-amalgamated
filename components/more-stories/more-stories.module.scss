@@ -3,7 +3,7 @@
 .container {
 	width: 100%;
 	font-family: Montserrat;
-	color: white;
+	color: var(--main-color);
 
 	h2 {
 		font-size: 3rem;
@@ -17,6 +17,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
-		color: white;
+		color: var(--main-color);
 	}
 }

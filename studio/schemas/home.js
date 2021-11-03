@@ -37,6 +37,29 @@ export default {
 					styles: [{ title: "Normal", value: "normal" }],
 					lists: [],
 				},
+
+			],
+		},
+		{
+			name: "moreInfo",
+			title: "More Info",
+			type: "array",
+			of: [
+				{
+					name: "image",
+					title: "Image",
+					type: "image",
+					options: {
+						hotspot: true,
+					},
+				},
+				{
+					title: "Block",
+					type: "block",
+					styles: [{ title: "Normal", value: "normal" }],
+					lists: [],
+				},
+
 			],
 		},
 	],

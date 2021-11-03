@@ -1,36 +1,81 @@
+@import "../sass/abstracts/mixins";
+
 .container {
 	margin: 0.5rem 1rem;
-	background-color: var(--main-color);
-	color: white;
+	color: var(--main-color);
 	height: 100%;
 
 	article {
 		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
 		header {
 			font-size: 2.5rem;
-			padding: 1rem;
-			font-family: Open, sans-serif;
-			text-align: center;
-		}
+			font-weight: 500;
+			font-family: montserrat;
 
-		.homepage {
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			align-items: center;
-
-			img {
-				width: 12rem;
+			@include respond(tab-land) {
+				font-size: 1.9rem;
 			}
 
-			p {
-				padding: 0.25rem 1rem;
-				font-family: Montserrat;
+			@include respond(tab-port) {
+				text-align: center;
+			}
+		}
+		.homepage {
+			width: 100%;
+			font-family: open sans;
+			font-weight: 100;
+			letter-spacing: 0.1rem;
+			font-size: 1.2rem;
+			.section1 {
+				display: flex;
+				justify-content: space-around;
+				border-radius: 15px;
+				align-items: flex-start;
+				background-color: var(--second-color);
+				color: #fff;
+				padding: 1rem;
+				margin: 1rem 0 0 0;
+
+				@include respond(tab-port) {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				img {
+					border-radius: 15px;
+					width: 50%;
+					margin: 1rem;
+				}
+
+				.block1 {
+					width: 100%;
+				}
+			}
+
+			.section2 {
+				border-radius: 15px;
+				background-color: var(--main-color);
+				color: white;
+				padding: 1rem;
+				margin: 1rem 0 0 0;
+
+				.block2 {
+					margin: 1rem;
+					display: flex;
+					flex-direction: column-reverse;
+
+					figure {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						img {
+							width: 100%;
+							margin-top: 2rem;
+							border-radius: 15px;
+						}
+					}
+				}
 			}
 		}
 	}
