@@ -18,8 +18,11 @@
 	}
 
 	.cards {
+		background-color: var(--second-color);
+		border-radius: 15px;
 		display: flex;
 		justify-content: center;
+		padding: 1rem;
 		flex-wrap: wrap;
 		gap: 1rem;
 	}
