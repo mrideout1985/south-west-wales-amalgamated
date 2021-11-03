@@ -20,7 +20,7 @@ const Agreements = ({ data }) => {
 		let names = ["other", "postal", "time-off", "parcel force"]
 		return filterCategories().map((category, i) => {
 			return (
-				<button key={i} onClick={() => setAgreement(category)}>{names[i]}</button>
+				<button className={styles.links} key={i} onClick={() => setAgreement(category)}>{names[i]}</button>
 			)
 		})
 	}
