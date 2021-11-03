@@ -5,6 +5,7 @@
 	box-sizing: border-box;
 	background-color: var(--second-color);
 	color: white;
+	border-radius: 15px;
 
 	.title {
 		font-family: Montserrat;
@@ -19,7 +20,6 @@
 		padding: 0 50px;
 		p {
 			letter-spacing: 0.1rem;
-			text-indent: 50px;
 		}
 	}
 

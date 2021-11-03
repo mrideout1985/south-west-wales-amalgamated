@@ -11,11 +11,8 @@ import { useRouter } from 'next/router'
 const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
 	const path = useRouter()
 	const image = (
-		<img
-			width={1240}
-			height={540}
-			alt={`Cover Image for ${title}`}
-			src={imageBuilder(coverImage).width(1240).height(540).url()}
+		<img alt={`Cover Image for ${title}`}
+			src={imageBuilder(coverImage).url()}
 		/>
 	)
 	return (
