@@ -1,3 +1,5 @@
+@import "../sass/abstracts/mixins";
+
 .container {
 	padding: 5rem;
 	box-sizing: border-box;
@@ -6,4 +8,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	@include respond(phone) {
+		margin: 0;
+		padding: 1rem;
+	}
 }

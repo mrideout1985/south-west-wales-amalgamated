@@ -10,6 +10,7 @@
 	@include respond(phone) {
 		flex-wrap: wrap-reverse;
 		justify-content: flex-start;
+		margin: 0;
 	}
 
 	.twitter-embed {

@@ -5,6 +5,10 @@
 	color: var(--main-color);
 	height: 100%;
 
+	@include respond(phone) {
+		margin: 0;
+	}
+
 	article {
 		width: 100%;
 		header {

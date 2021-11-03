@@ -5,6 +5,10 @@
 	background-color: var(--main-color);
 	border-radius: 15px;
 
+	@include respond(phone) {
+		margin: 0;
+	}
+
 	.data {
 		display: flex;
 		justify-content: center;
