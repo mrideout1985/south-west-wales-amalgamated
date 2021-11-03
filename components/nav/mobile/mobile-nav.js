@@ -28,11 +28,13 @@ const MobileNav = () => {
 	}
 
 	const Links = () => menuLinks.map((link) => (
-		<Link key={link} href={hrefs(link)}
-			role="menuitem"
-		>
-			{link}
-		</Link>
+		<div className={styles.links}>
+			<Link key={link} href={hrefs(link)}
+				role="menuitem"
+			>
+				{link}
+			</Link>
+		</div>
 	))
 
 
@@ -47,7 +49,7 @@ const MobileNav = () => {
 				aria-label="sidebar"
 			>
 				<div className={styles.logo}>
-					<CwuLogo size={150} />
+					<CwuLogo size={100} />
 				</div>
 				<Links />
 			</nav>
