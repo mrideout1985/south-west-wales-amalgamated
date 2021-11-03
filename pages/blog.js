@@ -25,10 +25,7 @@ const Blog = ({ allPosts, preview }) => {
 					excerpt={heroPost.excerpt}
 				/>
 			)}
-
-
 			{morePosts.length > 0 && <MoreStories posts={morePosts} />}
-
 		</div>
 	)
 }

@@ -14,7 +14,7 @@ function Footer() {
 				tabIndex="0"
 				aria-label="address"
 			>
-				<Location size={50} color="white" />
+				<Location size={50} color="#DF5F9C" />
 			</a>
 			<a
 				className={styles["email"]}
@@ -22,10 +22,10 @@ function Footer() {
 				aria-label="e-mail link"
 				href="mailto:c.w.u@btconnect.com"
 			>
-				<Mail size={50} color="white" />
+				<Mail size={50} color="#DF5F9C" />
 			</a>
 			<a href="tel:+447728333530">
-				<Phone size={50} color="white" />
+				<Phone size={50} color="#DF5F9C" />
 			</a>
 		</footer>
 	);

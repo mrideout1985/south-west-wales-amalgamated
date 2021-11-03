@@ -4,7 +4,8 @@
 	margin: 0 1rem 0 1rem;
 	display: flex;
 	justify-content: space-between;
-	background-color: var(--main-color);
+	background-color: var(--second-color);
+	border-radius: 15px;
 
 	@include respond(phone) {
 		flex-wrap: wrap-reverse;
@@ -29,16 +30,32 @@
 
 			p {
 				margin: 1rem 0 0 0;
-				font-size: 1rem;
+				font-size: 2.5rem;
+				font-weight: 500;
+				font-family: montserrat;
 				text-align: center;
 				font-family: "Montserrat", sans-serif;
 				color: white;
+
+				@include respond(tab-port) {
+					font-size: 1.5rem;
+				}
+
+				@include respond(phone) {
+					font-size: 1rem;
+				}
 			}
 		}
 		img {
 			height: 30rem;
 			width: 25rem;
 			justify-self: flex-end;
+			border-radius: 15px;
+
+			@include respond(tab-port) {
+				width: 10rem;
+				height: 10rem;
+			}
 
 			@include respond(phone) {
 				width: 15rem;

@@ -3,31 +3,33 @@ import { getAgreementsData } from "../lib/api"
 import { useAgreement } from '../hooks/useAgreement'
 import styles from "../styles/Agreements.module.scss"
 import Meta from "../components/meta/meta"
-import { set } from 'date-fns'
 
 const Agreements = ({ data }) => {
 	const [agreement, setAgreement] = useState()
 	const displayAgreement = useAgreement(agreement)
 
-	// const filterCategories = () => {
-	// 	data.map(el => el.categories.map((categories) => newCategories.push(categories._ref)))
-	// 	newCategories.filter((value, index) => newCategories.indexOf(value) === index).map(el => filteredCategories.push(el))
 
-	// }
-
-
-	const filter = () => {
-		let cats = []
-		return data.map(e => e.categories.map(e => cats.push(e._ref)))
-		// let unique = [...new Set(cats)]
-		// return unique
+	const filterCategories = () => {
+		let policyRefs = []
+		data.map(e => e.categories.map(e => policyRefs.push(e._ref)))
+		let filteredPolicyRefs = [...new Set(policyRefs)]
+		return filteredPolicyRefs
 	}
 
+	const handleButtons = () => {
+		let names = ["other", "postal", "time-off", "parcel force"]
+		return filterCategories().map((category, i) => {
+			return (
+				<button key={i} onClick={() => setAgreement(category)}>{names[i]}</button>
+			)
+		})
+	}
 
-
-
-
-
+	useEffect(() => {
+		if (data && data[0].categories[0]) {
+			setAgreement(data[0].categories[0]._ref)
+		}
+	}, [data])
 
 	return (
 		<div className={styles.agreements}>
@@ -35,16 +37,11 @@ const Agreements = ({ data }) => {
 				<meta name="description" content="Agreements" />
 			</Meta>
 			<div className={styles["nav-links"]}>
-				{filter().map((category) => {
-					return (
-						<button onClick={() => setAgreement(category)}>1</button>
-					)
-				})}
+				{handleButtons()}
 			</div>
 			<div className={styles["agreements-container"]}>
-				{displayAgreement === undefined
-					? ""
-					: displayAgreement.map((el, key) => {
+				{displayAgreement &&
+					displayAgreement.map((el, key) => {
 						return (
 							<a
 								key={key}
@@ -56,7 +53,6 @@ const Agreements = ({ data }) => {
 						);
 					})}
 			</div>
-
 		</div>
 	)
 }

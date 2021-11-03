@@ -1,37 +1,48 @@
-// import { getAllPostsForHome } from "../lib/api";
 import { getHomeData } from "../lib/api";
 import Meta from "../components/meta/meta"
 import SanityBlockContent from "@sanity/block-content-to-react";
 import styles from "../styles/Home.module.scss";
 
 export default function Home({ data, preview }) {
-	// const heroPost = allPosts[0];
-	// const morePosts = allPosts.slice(1);
-	return (
 
-		<div className={styles.container}>
+
+	return (
+		<div div className={styles.container} >
 			<Meta title={"HOME"}>
 				<meta name="description" content="Home" />
 			</Meta>
-			{data &&
-				data.map((home, index) => (
+			{
+				data && data.map((home, index) => (
 					<article key={index}>
 						<header>{home.header}</header>
 						<div className={styles["homepage"]}>
-
-							{home.image?.asset?.url !== undefined ? <img
-								src={home.image.asset.url}
-								alt="homepageoimage"
-							/> : null}
-							<SanityBlockContent
-								dataset="production"
-								projectId="8bvty42v"
-								blocks={home?.info}
-							/>
+							<div className={styles.section1}>
+								{home.image?.asset?.url !== undefined ? <img
+									src={home.image.asset.url}
+									alt="homepageoimage"
+								/> : null}
+								<div className={styles.block1}>
+									<SanityBlockContent
+										dataset="production"
+										projectId="8bvty42v"
+										blocks={home?.info}
+									/>
+								</div>
+							</div>
+							{home.moreInfo ? <div className={styles.section2}>
+								<div className={styles.block2}>
+									<SanityBlockContent
+										dataset="production"
+										projectId="8bvty42v"
+										blocks={home?.moreInfo}
+									/>
+								</div>
+							</div> : null}
 						</div>
 					</article>
-				))}
-		</div>
+				))
+			}
+		</div >
 	);
 }
 
