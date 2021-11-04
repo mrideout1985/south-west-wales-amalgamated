@@ -20,7 +20,7 @@ function Footer() {
 				className={styles["email"]}
 				tabIndex="0"
 				aria-label="e-mail link"
-				href="mailto:c.w.u@btconnect.com"
+				href="mailto:swwamal@gmail.com"
 			>
 				<Mail size={50} color="#DF5F9C" />
 			</a>
