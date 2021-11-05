@@ -27,9 +27,9 @@ const MobileNav = () => {
 		}
 	}
 
-	const Links = () => menuLinks.map((link) => (
-		<div className={styles.links}>
-			<Link key={link} href={hrefs(link)}
+	const Links = () => menuLinks.map((link, i) => (
+		<div key={i} className={styles.links}>
+			<Link key={i} href={hrefs(link)}
 				role="menuitem"
 			>
 				{link}

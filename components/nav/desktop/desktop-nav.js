@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { menuLinks } from "../../../assets/menulinks";
 import Link from "next/link";
@@ -8,44 +8,49 @@ import SvgCwuLogo from "../../icons/CwuLogo";
 const DesktopNav = () => {
 
 	const router = useRouter()
+	const navRef = useRef([])
+	navRef.current = []
+	const addToRefs = (el) => {
+		if (el && !navRef.current.includes(el)) {
+			navRef.current.push(el)
+		}
 
-	// useEffect(() => {
-	// 	let focusableElements = document.querySelectorAll("a[href]");
-	// 	let firstTabStop = focusableElements[0];
-	// 	let lastTabStop = focusableElements[focusableElements.length - 1];
+	}
+	useEffect(() => {
+		let focusableElements = navRef.current
+		let firstTabStop = focusableElements[0];
+		let lastTabStop = focusableElements[focusableElements.length - 1];
 
-	// 	console.log(firstTabStop);
+		if (focusableElements) {
+			focusableElements = Array.prototype.slice.call([focusableElements]);
+			firstTabStop.focus();
 
-	// 	if (isSidebarOpen) {
-	// 		focusableElements = Array.prototype.slice.call([focusableElements]);
-	// 		firstTabStop.focus();
+			const handleTabKey = (event) => {
+				if (event.key === "Tab") {
+					if (event.shiftKey) {
+						if (document.activeElement === firstTabStop) {
+							event.preventDefault();
+							lastTabStop.focus();
+						}
+					} else {
+						if (document.activeElement === lastTabStop) {
+							event.preventDefault();
+							firstTabStop.focus();
+						}
+					}
+				}
+			};
 
-	// 		const handleTabKey = (event) => {
-	// 			if (event.key === "Tab") {
-	// 				if (event.shiftKey) {
-	// 					if (document.activeElement === firstTabStop) {
-	// 						event.preventDefault();
-	// 						lastTabStop.focus();
-	// 					}
-	// 				} else {
-	// 					if (document.activeElement === lastTabStop) {
-	// 						event.preventDefault();
-	// 						firstTabStop.focus();
-	// 					}
-	// 				}
-	// 			}
-	// 		};
+			const handleEscapeKey = (event) => {
+				if (event.key === "Escape") {
+					document.activeElement.blur()
+				}
+			};
 
-	// 		const handleEscapeKey = (event) => {
-	// 			if (event.key === "Escape") {
-	// 				setIsSidebarOpen(!isSidebarOpen);
-	// 			}
-	// 		};
-
-	// 		document.addEventListener("keydown", handleTabKey);
-	// 		document.addEventListener("keydown", handleEscapeKey);
-	// 	}
-	// }, [isSidebarOpen]);
+			document.addEventListener("keydown", handleTabKey);
+			document.addEventListener("keydown", handleEscapeKey);
+		}
+	}, []);
 
 	const classNames = (link) => {
 		let className = [[styles["default"]]]
@@ -69,14 +74,14 @@ const DesktopNav = () => {
 			href={hrefs(link)}
 			role="menuitem"
 		>
-			<a className={classNames(link)}>
+			<a className={classNames(link)} ref={addToRefs}>
 				<p>{link === "/" ? "home" : link}</p>
 			</a>
 		</Link>
 	))
 
 	return (
-		<header className={styles.container} aria-label="swwamal">
+		<header id="header" className={styles.container} aria-label="swwamal">
 			<nav className={styles.nav}>
 				<div className={styles.logo}>
 					<SvgCwuLogo size={100} />
