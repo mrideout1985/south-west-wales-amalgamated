@@ -1,10 +1,59 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { getRepData } from '../lib/api'
+import { useDebounce, useClickAway } from "react-use";
 import RepCard from '../components/rep-card/rep-card'
 import styles from "../styles/Contact.module.scss"
 import Meta from '../components/meta/meta'
 
 const Contact = ({ repData }) => {
+	const [query, setQuery] = useState("");
+	const [value, setValue] = useState("");
+	const [isOpen, setIsOpen] = useState(false);
+	const listRef = useRef(null);
+
+	console.log(repData)
+
+
+	const handleChange = (e) => {
+		e.preventDefault();
+		setValue(e.target.value)
+	}
+	// const handleSubmit = (e) => {
+	// 	e.preventDefault()
+	// 	setQuery(value)
+	// 	setValue("")
+	// }
+
+	const [] = useDebounce(
+		() => {
+			setQuery(value)
+		},
+		200,
+		[value]
+	);
+
+	useClickAway(listRef, () => {
+		setIsOpen(false);
+	});
+
+	const handleResults = (data) => {
+		return data && data.filter((res) => {
+			if (query === "") {
+				return res
+			} else if (res.name.toLowerCase().includes(query.toLowerCase())) {
+				return res
+			}
+		}).map((res, i) => {
+			console.log(res)
+			return (
+				<li key={i}>
+					<RepCard name={res.name} image={res.mainImage.asset.url} bio={res.bio} email={res} />
+				</li>
+			)
+		})
+	}
+
+
 
 
 	return (
@@ -14,18 +63,16 @@ const Contact = ({ repData }) => {
 			</Meta>
 			<div className={styles.pagetitle}>
 				<h1>Contact A Rep</h1>
+				<form>
+					<label htmlFor="search" />
+					<input id="search" placeholder="Rep Name....." type="search" value={value} onChange={handleChange} />
+				</form>
 			</div>
 			<div className={styles.cards}>
-				{repData &&
-					repData.map((info, key) => (
-						<RepCard
-							name={info.name}
-							bio={info.bio}
-							image={info.mainImage.asset.url ? info.mainImage.asset.url : null}
-							key={key}
-							email={info.email}
-						/>
-					))}
+
+				<ul>
+					{handleResults(repData)}
+				</ul>
 			</div>
 		</section>
 	)
