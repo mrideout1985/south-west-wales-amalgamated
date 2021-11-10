@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { getRepData } from '../lib/api'
-import { useDebounce, useClickAway } from "react-use";
+import { useDebounce } from "react-use";
 import RepCard from '../components/rep-card/rep-card'
 import styles from "../styles/Contact.module.scss"
 import Meta from '../components/meta/meta'
@@ -8,21 +8,12 @@ import Meta from '../components/meta/meta'
 const Contact = ({ repData }) => {
 	const [query, setQuery] = useState("");
 	const [value, setValue] = useState("");
-	const [isOpen, setIsOpen] = useState(false);
 	const listRef = useRef(null);
-
-	console.log(repData)
-
 
 	const handleChange = (e) => {
 		e.preventDefault();
 		setValue(e.target.value)
 	}
-	// const handleSubmit = (e) => {
-	// 	e.preventDefault()
-	// 	setQuery(value)
-	// 	setValue("")
-	// }
 
 	const [] = useDebounce(
 		() => {
@@ -31,10 +22,6 @@ const Contact = ({ repData }) => {
 		200,
 		[value]
 	);
-
-	useClickAway(listRef, () => {
-		setIsOpen(false);
-	});
 
 	const handleResults = (data) => {
 		return data && data.filter((res) => {
@@ -62,14 +49,13 @@ const Contact = ({ repData }) => {
 				<meta name="description" content="Contact" />
 			</Meta>
 			<div className={styles.pagetitle}>
-				<h1>Contact A Rep</h1>
+				<h1>Contact</h1>
 				<form>
 					<label htmlFor="search" />
 					<input id="search" placeholder="Rep Name....." type="search" value={value} onChange={handleChange} />
 				</form>
 			</div>
 			<div className={styles.cards}>
-
 				<ul>
 					{handleResults(repData)}
 				</ul>
