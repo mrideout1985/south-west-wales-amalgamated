@@ -25,8 +25,7 @@ const RepCard = (props) => {
 						<h2>{props.name}</h2>
 						<h4>{props.bio}</h4>
 					</span>
-
-					<a href={`mailto:${props.email}`}>Contact</a>
+					{props.email === null ? null : <a href={`mailto:${props.email}`}>Contact</a>}
 				</div>
 			</div>
 		</div>
