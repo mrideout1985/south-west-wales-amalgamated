@@ -47,7 +47,7 @@ const Contact = ({ repData }) => {
 			console.log(res)
 			return (
 				<li key={i}>
-					<RepCard name={res.name} image={res.mainImage.asset.url} bio={res.bio} email={res} />
+					<RepCard name={res.name} image={res.mainImage.asset.url} bio={res.bio} email={res.email} />
 				</li>
 			)
 		})
