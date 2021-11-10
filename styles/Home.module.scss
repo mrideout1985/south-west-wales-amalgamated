@@ -2,8 +2,6 @@
 
 .container {
 	color: var(--main-color);
-	height: 100%;
-
 	@include respond(phone) {
 		margin: 0;
 	}
@@ -53,10 +51,14 @@
 				border-radius: 15px;
 				align-items: flex-start;
 				background-color: var(--second-color);
-
 				color: #fff;
 				padding: 1rem;
 				margin: 1rem 0 0 0;
+
+				@include respond(tab-land) {
+					flex-direction: column;
+					align-items: center;
+				}
 
 				@include respond(tab-port) {
 					flex-direction: column;
@@ -82,9 +84,10 @@
 				margin: 1rem 0 0 0;
 
 				.block2 {
-					margin: 1rem;
 					display: flex;
-					flex-direction: column-reverse;
+					width: 100%;
+					flex-direction: column;
+					min-height: 20rem;
 
 					figure {
 						display: flex;
