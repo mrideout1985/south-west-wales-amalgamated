@@ -21,17 +21,20 @@ const Campaigns = ({ allPosts, preview }) => {
 				<h1>Campaigns</h1>
 			</div>
 
-			{heroPost && (
-				<HeroPost
-					title={heroPost.title}
-					coverImage={heroPost.coverImage}
-					date={heroPost.date}
-					author={heroPost.author}
-					slug={heroPost.slug}
-					excerpt={heroPost.excerpt}
-				/>
-			)}
-			{morePosts.length > 0 && <MoreStories posts={morePosts} />}
+			<div className={styles["blog-container"]}>
+				{heroPost && (
+					<HeroPost
+						title={heroPost.title}
+						coverImage={heroPost.coverImage}
+						date={heroPost.date}
+						author={heroPost.author}
+						slug={heroPost.slug}
+						excerpt={heroPost.excerpt}
+					/>
+				)}
+				{morePosts.length > 0 && <MoreStories posts={morePosts} />}
+			</div>
+
 		</section>
 	)
 }

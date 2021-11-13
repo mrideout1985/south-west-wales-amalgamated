@@ -8,49 +8,49 @@ import SvgCwuLogo from "../../icons/CwuLogo";
 const DesktopNav = () => {
 
 	const router = useRouter()
-	const navRef = useRef([])
-	navRef.current = []
-	const addToRefs = (el) => {
-		if (el && !navRef.current.includes(el)) {
-			navRef.current.push(el)
-		}
+	// const navRef = useRef([])
+	// navRef.current = []
+	// const addToRefs = (el) => {
+	// 	if (el && !navRef.current.includes(el)) {
+	// 		navRef.current.push(el)
+	// 	}
 
-	}
-	useEffect(() => {
-		let focusableElements = navRef.current
-		let firstTabStop = focusableElements[0];
-		let lastTabStop = focusableElements[focusableElements.length - 1];
+	// }
+	// useEffect(() => {
+	// 	let focusableElements = navRef.current
+	// 	let firstTabStop = focusableElements[0];
+	// 	let lastTabStop = focusableElements[focusableElements.length - 1];
 
-		if (focusableElements) {
-			focusableElements = Array.prototype.slice.call([focusableElements]);
-			firstTabStop.focus();
+	// 	if (focusableElements) {
+	// 		focusableElements = Array.prototype.slice.call([focusableElements]);
+	// 		firstTabStop.focus();
 
-			const handleTabKey = (event) => {
-				if (event.key === "Tab") {
-					if (event.shiftKey) {
-						if (document.activeElement === firstTabStop) {
-							event.preventDefault();
-							lastTabStop.focus();
-						}
-					} else {
-						if (document.activeElement === lastTabStop) {
-							event.preventDefault();
-							firstTabStop.focus();
-						}
-					}
-				}
-			};
+	// 		const handleTabKey = (event) => {
+	// 			if (event.key === "Tab") {
+	// 				if (event.shiftKey) {
+	// 					if (document.activeElement === firstTabStop) {
+	// 						event.preventDefault();
+	// 						lastTabStop.focus();
+	// 					}
+	// 				} else {
+	// 					if (document.activeElement === lastTabStop) {
+	// 						event.preventDefault();
+	// 						firstTabStop.focus();
+	// 					}
+	// 				}
+	// 			}
+	// 		};
 
-			const handleEscapeKey = (event) => {
-				if (event.key === "Escape") {
-					document.activeElement.blur()
-				}
-			};
+	// 		const handleEscapeKey = (event) => {
+	// 			if (event.key === "Escape") {
+	// 				document.activeElement.blur()
+	// 			}
+	// 		};
 
-			document.addEventListener("keydown", handleTabKey);
-			document.addEventListener("keydown", handleEscapeKey);
-		}
-	}, []);
+	// 		document.addEventListener("keydown", handleTabKey);
+	// 		document.addEventListener("keydown", handleEscapeKey);
+	// 	}
+	// }, []);
 
 	const classNames = (link) => {
 		let className = [[styles["default"]]]
@@ -74,7 +74,7 @@ const DesktopNav = () => {
 			href={hrefs(link)}
 			role="menuitem"
 		>
-			<a className={classNames(link)} ref={addToRefs}>
+			<a className={classNames(link)}>
 				<p>{link === "/" ? "home" : link}</p>
 			</a>
 		</Link>

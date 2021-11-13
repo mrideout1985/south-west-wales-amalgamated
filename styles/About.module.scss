@@ -1,79 +1,100 @@
 @import "../sass/abstracts/mixins";
 
 .container {
+	margin: auto;
+
 	@include respond(phone) {
 		margin: 0;
 	}
 
-	.pagetitle {
-		width: 100%;
-		font-family: montserrat;
-		margin: 0;
+	.about-data {
+		article {
+			.pagetitle {
+				font-family: montserrat;
+				margin: 0;
 
-		h1 {
-			font-size: 3rem;
-			color: var(--main-color);
-			padding: 0.2rem;
+				h1 {
+					font-size: 3rem;
+					color: var(--main-color);
+					padding: 0.2rem;
 
-			@include respond(phone) {
-				font-size: 2.2rem;
-			}
-		}
-	}
-
-	.data {
-		display: flex;
-		justify-content: center;
-		background-color: var(--second-color);
-		border-radius: 15px;
-
-		@include respond(phone) {
-			.image {
-				flex-direction: column;
-				img {
-					border-radius: 15px;
-				}
-				.block {
-					p {
-						margin-top: 2rem;
+					@include respond(phone) {
+						font-size: 2.2rem;
 					}
 				}
 			}
-		}
 
-		.image {
-			display: flex;
-			margin: 2rem;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
+			header {
+				font-size: 2.5rem;
+				font-weight: 500;
+				font-family: montserrat;
 
-			img {
-				border-radius: 5px;
-				box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-				width: 100%;
+				@include respond(tab-land) {
+					font-size: 1.9rem;
+				}
+
+				@include respond(tab-port) {
+					text-align: center;
+				}
 			}
-
-			.block {
-				font-family: Montserrat;
+			.aboutpage {
+				padding: 1rem;
 				color: white;
+				font-family: Montserrat;
+				background-color: var(--main-color);
+				border-radius: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 
-				p {
-				}
+				.blocks {
+					max-width: 1300px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
 
-				figure {
-					padding: 0;
-					margin: 0;
-					img {
-						width: 100%;
+					.image-block1 {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						gap: 1rem;
+
+						@include respond(tab-land) {
+							flex-direction: column;
+							align-items: flex-start;
+						}
+
+						.image {
+							img {
+								border-radius: 15px;
+								max-width: 100%;
+								height: auto;
+
+								@include respond(tab-land) {
+									margin-top: 1rem;
+								}
+							}
+						}
+
+						.section1 {
+							p {
+								max-width: 800px;
+							}
+						}
 					}
-				}
-
-				@include respond(phone) {
-					margin: 0;
-					img {
-						margin: 0;
-						padding: 0;
+					.section2 {
+						figure {
+							margin: 0;
+							img {
+								border-radius: 15px;
+								max-width: 100%;
+								height: auto;
+							}
+						}
+						p {
+							max-width: 800px;
+						}
 					}
 				}
 			}
