@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { getAgreementsData } from "../lib/api"
 import { useAgreement } from '../hooks/useAgreement'
 import styles from "../styles/Agreements.module.scss"
@@ -8,7 +8,50 @@ const Agreements = ({ data }) => {
 	const [agreement, setAgreement] = useState()
 	const [selected, setIsSelected] = useState(0)
 	const displayAgreement = useAgreement(agreement)
+	const tabRef = useRef([])
+	tabRef.current = []
 
+	const addToRefs = (el) => {
+		if (el && !tabRef.current.includes(el)) {
+			tabRef.current.push(el)
+		}
+	}
+
+	useEffect(() => {
+		let focusableElements = tabRef.current
+		let firstTabStop = focusableElements[0];
+		let lastTabStop = focusableElements[focusableElements.length - 1];
+
+		if (focusableElements) {
+			focusableElements = Array.prototype.slice.call([focusableElements]);
+			firstTabStop.focus();
+
+			const handleTabKey = (event) => {
+				if (event.key === "Tab") {
+					if (event.shiftKey) {
+						if (document.activeElement === firstTabStop) {
+							event.preventDefault();
+							lastTabStop.focus();
+						}
+					} else {
+						if (document.activeElement === lastTabStop) {
+							event.preventDefault();
+							firstTabStop.focus();
+						}
+					}
+				}
+			};
+
+			const handleEscapeKey = (event) => {
+				if (event.key === "Escape") {
+					document.activeElement.blur()
+				}
+			};
+
+			document.addEventListener("keydown", handleTabKey);
+			document.addEventListener("keydown", handleEscapeKey);
+		}
+	}, []);
 
 	const filterCategories = () => {
 		let policyRefs = []
@@ -25,7 +68,7 @@ const Agreements = ({ data }) => {
 		let names = ["other", "postal", "time-off", "parcel force"]
 		return filterCategories().map((category, i) => {
 			return (
-				<button className={selected === i ? styles.active : styles.links} key={i} onClick={() => handleTab(category, i)}>{names[i]}</button>
+				<button ref={addToRefs} className={selected === i ? styles.active : styles.links} key={i} onClick={() => handleTab(category, i)}>{names[i]}</button>
 			)
 		})
 	}
