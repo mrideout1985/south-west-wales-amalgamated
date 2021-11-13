@@ -19,9 +19,7 @@ const Agreements = ({ data }) => {
 
 	const handleTab = (category, number) => {
 		setAgreement(category)
-		console.log(category)
 		setIsSelected(number)
-		console.log(number)
 	}
 	const handleButtons = () => {
 		let names = ["other", "postal", "time-off", "parcel force"]

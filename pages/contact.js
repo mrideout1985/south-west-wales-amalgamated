@@ -31,7 +31,6 @@ const Contact = ({ repData }) => {
 				return res
 			}
 		}).map((res, i) => {
-			console.log(res)
 			return (
 				<li key={i}>
 					<RepCard name={res.name} image={res.mainImage.asset.url} bio={res.bio} email={res.email} />
