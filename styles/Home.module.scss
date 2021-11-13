@@ -7,7 +7,7 @@
 		margin: 0;
 	}
 
-	.home-data {
+	.about-data {
 		article {
 			.pagetitle {
 				font-family: montserrat;
@@ -37,33 +37,70 @@
 					text-align: center;
 				}
 			}
-			.homepage {
+			.aboutpage {
 				padding: 1rem;
 				color: white;
 				font-family: Montserrat;
 				background-color: var(--main-color);
 				border-radius: 15px;
-				.image {
-					img {
-						border-radius: 15px;
-						max-width: 100%;
-						height: auto;
-					}
-				}
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 
-				.section1 {
-					p {
-						max-width: 800px;
-					}
-				}
+				.blocks {
+					max-width: 1300px;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
 
-				.section2 {
-					p {
-						max-width: 800px;
-					}
+					.image-block1 {
+						display: flex;
+						justify-content: flex-start;
+						align-items: center;
+						gap: 1rem;
 
-					figure {
-						img {
+						@include respond(tab-land) {
+							flex-direction: column;
+							align-items: flex-start;
+						}
+
+						.image {
+							img {
+								border-radius: 15px;
+								max-width: 100%;
+								height: auto;
+
+								@include respond(tab-land) {
+									margin-top: 1rem;
+								}
+							}
+						}
+
+						.section1 {
+							p {
+								max-width: 800px;
+							}
+						}
+					}
+					hr {
+						width: 100%;
+						border: none;
+						height: 0.25rem;
+						background-color: var(--second-color);
+						margin: 1rem 0;
+					}
+					.section2 {
+						figure {
+							margin: 0;
+							img {
+								border-radius: 15px;
+								max-width: 100%;
+								height: auto;
+							}
+						}
+						p {
+							max-width: 800px;
 						}
 					}
 				}
