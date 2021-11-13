@@ -22,11 +22,13 @@ export default function Post({ post, morePosts, preview }) {
                 <h2>{post.title !== undefined ? post.title : "Title"}</h2>
               </div>
               <div className={styles.post}>
+                <hr />
                 {post.body === undefined ? null : <SanityBlockContent
                   dataset="production"
                   projectId="8bvty42v"
                   blocks={post.body}
                 />}
+                <hr />
               </div>
               <div className={styles.avatar}>
                 <Avatar name={post.author.name} picture={post.author.picture} />

@@ -1,9 +1,8 @@
 @import "../../../sass/abstracts/mixins";
 
 .container {
-	margin: 0.5rem 1rem;
 	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-	border-radius: 15px;
+	border-radius: 5px;
 
 	.nav {
 		display: flex;

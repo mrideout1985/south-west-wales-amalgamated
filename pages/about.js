@@ -33,6 +33,7 @@ const About = ({ data }) => {
 										/>
 									</div>
 								</div>
+								<hr />
 								{!about.secondBody ? null :
 									<div className={styles.section2}>
 										<SanityBlockContent

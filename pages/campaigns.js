@@ -22,7 +22,7 @@ const Campaigns = ({ allPosts, preview }) => {
 			</div>
 
 			<div className={styles["blog-container"]}>
-				{heroPost && (
+				{heroPost.title ? heroPost && (
 					<HeroPost
 						title={heroPost.title}
 						coverImage={heroPost.coverImage}
@@ -31,7 +31,7 @@ const Campaigns = ({ allPosts, preview }) => {
 						slug={heroPost.slug}
 						excerpt={heroPost.excerpt}
 					/>
-				)}
+				) : <div>No Campaigns Posted yet</div>}
 				{morePosts.length > 0 && <MoreStories posts={morePosts} />}
 			</div>
 

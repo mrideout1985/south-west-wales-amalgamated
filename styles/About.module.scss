@@ -83,6 +83,13 @@
 							}
 						}
 					}
+					hr {
+						width: 100%;
+						border: none;
+						height: 0.25rem;
+						background-color: var(--second-color);
+						margin: 1rem 0;
+					}
 					.section2 {
 						figure {
 							margin: 0;

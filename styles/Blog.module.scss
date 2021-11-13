@@ -1,12 +1,11 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	margin: 0 10rem;
 
+	@include respond(tab-land) {
+		margin: 0;
+	}
 	.pagetitle {
 		width: 100%;
 		font-family: montserrat;
