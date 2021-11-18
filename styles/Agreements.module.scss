@@ -1,105 +1,112 @@
 @import "../sass/abstracts/mixins";
 
 .agreements {
-	transition: all 1s ease;
-	font-family: Open sans;
+    transition: all 1s ease;
+    font-family: Open sans;
 
-	@include respond(phone) {
-		margin: 0;
-	}
+    @include respond(phone) {
+        margin: 0;
+    }
 
-	.pagetitle {
-		width: 100%;
-		font-family: montserrat;
-		margin: 0;
+    .pagetitle {
+        width: 100%;
+        font-family: montserrat;
+        margin: 0;
 
-		h1 {
-			font-size: 3rem;
-			color: var(--main-color);
+        h1 {
+            font-size: 3rem;
+            color: var(--main-color);
 
-			@include respond(phone) {
-				font-size: 2.2rem;
-			}
-		}
-	}
+            @include respond(phone) {
+                font-size: 2.2rem;
+            }
+        }
+    }
 
-	.nav-links {
-		width: 100%;
-		display: flex;
+    .nav-links {
+        width: 100%;
+        display: flex;
 
-		.links {
-			color: white;
-			position: relative;
-			text-align: center;
-			padding: 0.5rem 1rem;
-			font-family: montserrat;
-			font-size: 1rem;
-			cursor: pointer;
-			transition: all 0.45s ease;
-			border: none;
-			text-transform: capitalize;
-			color: var(--main-color);
-			font-weight: 500;
-			z-index: 1;
-			margin-top: 2rem;
+        .links {
+            color: white;
+            position: relative;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-family: montserrat;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.45s ease;
+            border: none;
+            text-transform: capitalize;
+            color: var(--main-color);
+            font-weight: 500;
+            z-index: 1;
+            margin-top: 2rem;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
 
-			@include respond(phone) {
-				padding: 0.5rem 1rem;
-				font-size: 0.8rem;
-			}
-		}
+            @include respond(phone) {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
 
-		.active {
-			position: relative;
-			text-align: center;
-			padding: 0.5rem 1rem;
-			font-family: montserrat;
-			font-size: 1rem;
-			cursor: pointer;
-			transition: all 0.45s ease;
-			border: none;
-			text-transform: capitalize;
-			color: white;
-			font-weight: 500;
-			z-index: 1;
-			margin-top: 2rem;
-			background-color: var(--second-color);
+        .active {
+            position: relative;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-family: montserrat;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.45s ease;
+            border: none;
+            text-transform: capitalize;
+            color: white;
+            font-weight: 500;
+            z-index: 1;
+            margin-top: 2rem;
+            background-color: var(--second-color);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
 
-			@include respond(phone) {
-				padding: 0.5rem 1rem;
-				font-size: 0.8rem;
-			}
-		}
-	}
+            @include respond(phone) {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
 }
 
 .agreements-container {
-	width: 100%;
-	display: grid;
-	grid-gap: 1rem;
-	grid-template-columns: repeat(auto-fill, 186px);
-	justify-content: left;
-	background-color: var(--second-color);
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 186px);
+    justify-content: left;
+    background-color: var(--second-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 
-	.policies {
-		height: 10rem;
-		width: 10rem;
-		background-color: var(--main-color);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: 1rem;
-		text-decoration: none;
-		text-transform: capitalize;
-		text-align: center;
-		color: white;
-		font-family: "Montserrat", sans-serif;
-		border: 1px solid var(--main-color);
-		transition: all 0.25s ease;
-		border-radius: 15px;
+    .policies {
+        height: 10rem;
+        width: 10rem;
+        background-color: var(--main-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        text-align: center;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        border: 1px solid var(--main-color);
+        transition: all 0.25s ease;
+        border-radius: 15px;
 
-		&:hover {
-			transform: scale(1.1);
-		}
-	}
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }

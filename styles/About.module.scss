@@ -1,110 +1,110 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-	margin: auto;
+    margin: auto;
 
-	@include respond(phone) {
-		margin: 0;
-	}
+    @include respond(phone) {
+        margin: 0;
+    }
 
-	.about-data {
-		article {
-			.pagetitle {
-				font-family: montserrat;
-				margin: 0;
+    .about-data {
+        article {
+            .pagetitle {
+                font-family: montserrat;
+                margin: 0;
 
-				h1 {
-					font-size: 3rem;
-					color: var(--main-color);
-					padding: 0.2rem;
+                h1 {
+                    font-size: 3rem;
+                    color: var(--main-color);
+                    padding: 0.2rem;
 
-					@include respond(phone) {
-						font-size: 2.2rem;
-					}
-				}
-			}
+                    @include respond(phone) {
+                        font-size: 2.2rem;
+                    }
+                }
+            }
 
-			header {
-				font-size: 2.5rem;
-				font-weight: 500;
-				font-family: montserrat;
+            header {
+                font-size: 2.5rem;
+                font-weight: 500;
+                font-family: montserrat;
 
-				@include respond(tab-land) {
-					font-size: 1.9rem;
-				}
+                @include respond(tab-land) {
+                    font-size: 1.9rem;
+                }
 
-				@include respond(tab-port) {
-					text-align: center;
-				}
-			}
-			.aboutpage {
-				padding: 1rem;
-				color: white;
-				font-family: Montserrat;
-				background-color: var(--main-color);
-				border-radius: 15px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+                @include respond(tab-port) {
+                    text-align: center;
+                }
+            }
+            .aboutpage {
+                padding: 1rem;
+                color: white;
+                font-family: Montserrat;
+                background-color: var(--main-color);
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
 
-				.blocks {
-					max-width: 1300px;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
+                .blocks {
+                    max-width: 1300px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
 
-					.image-block1 {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						gap: 1rem;
+                    .image-block1 {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
 
-						@include respond(tab-land) {
-							flex-direction: column;
-							align-items: flex-start;
-						}
+                        @include respond(tab-land) {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
 
-						.image {
-							img {
-								border-radius: 15px;
-								max-width: 100%;
-								height: auto;
+                        .image {
+                            img {
+                                border-radius: 15px;
+                                max-width: 100%;
+                                height: auto;
 
-								@include respond(tab-land) {
-									margin-top: 1rem;
-								}
-							}
-						}
+                                @include respond(tab-land) {
+                                    margin-top: 1rem;
+                                }
+                            }
+                        }
 
-						.section1 {
-							p {
-								max-width: 800px;
-							}
-						}
-					}
-					hr {
-						width: 100%;
-						border: none;
-						height: 0.25rem;
-						background-color: var(--second-color);
-						margin: 1rem 0;
-					}
-					.section2 {
-						figure {
-							margin: 0;
-							img {
-								border-radius: 15px;
-								max-width: 100%;
-								height: auto;
-							}
-						}
-						p {
-							max-width: 800px;
-						}
-					}
-				}
-			}
-		}
-	}
+                        .section1 {
+                            p {
+                                max-width: 800px;
+                            }
+                        }
+                    }
+                    hr {
+                        width: 100%;
+                        border: none;
+                        height: 0.25rem;
+                        background-color: var(--second-color);
+                        margin: 1rem 0;
+                    }
+                    .section2 {
+                        figure {
+                            margin: 0;
+                            img {
+                                border-radius: 15px;
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+                        p {
+                            max-width: 800px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

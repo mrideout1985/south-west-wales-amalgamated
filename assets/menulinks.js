@@ -1,1 +1,8 @@
-export const menuLinks = ["home", "about", "news", "campaigns", "agreements", "blog", "contact"]
+export const menuLinks = [
+    "home",
+    "about",
+    "campaigns",
+    "agreements",
+    "news",
+    "contact",
+];
