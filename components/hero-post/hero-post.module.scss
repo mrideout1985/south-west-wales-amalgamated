@@ -1,58 +1,58 @@
 @import "../../sass/abstracts/mixins";
 
 .container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	font-family: Montserrat;
-	background-color: var(--second-color);
-	border-radius: 15px;
-	.coverimage {
-		width: 100%;
-	}
-	.postinfo {
-		width: 100%;
-		margin-left: 1rem;
-		.title_date {
-			width: 100%;
-			margin: 1rem 0 0 0;
-			text-transform: capitalize;
-			.h3 {
-				font-size: 4rem;
-				margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Montserrat;
+  background-color: var(--second-color);
+  border-radius: 10px;
+  .coverimage {
+    width: 100%;
+  }
+  .postinfo {
+    width: 100%;
+    margin-left: 1rem;
+    .title_date {
+      width: 100%;
+      margin: 1rem 0 0 0;
+      text-transform: capitalize;
+      .h3 {
+        font-size: 4rem;
+        margin: 0;
 
-				a {
-					text-decoration: none;
-					color: white;
+        a {
+          text-decoration: none;
+          color: white;
 
-					&:visited {
-						color: white;
-					}
-				}
+          &:visited {
+            color: white;
+          }
+        }
 
-				@include respond(phone) {
-					font-size: 1.5rem;
-				}
-			}
-			.date {
-				font-size: 1.2rem;
-				margin: 1rem 0.2rem;
-				color: white;
-			}
-		}
+        @include respond(phone) {
+          font-size: 1.5rem;
+        }
+      }
+      .date {
+        font-size: 1.2rem;
+        margin: 1rem 0.2rem;
+        color: white;
+      }
+    }
 
-		.excerpt_author {
-			width: 100%;
-			margin: 2rem;
-			display: inherit;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: flex-end;
+    .excerpt_author {
+      width: 100%;
+      margin: 2rem;
+      display: inherit;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
 
-			.text {
-			}
-		}
-	}
+      .text {
+      }
+    }
+  }
 }

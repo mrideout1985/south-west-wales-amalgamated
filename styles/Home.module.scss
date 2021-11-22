@@ -1,9 +1,8 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-  margin: auto;
-
-  @include respond(phone) {
+  margin: 0 10rem;
+  @include respond(tab-land) {
     margin: 0;
   }
   .pagetitle {
@@ -41,7 +40,7 @@
         color: white;
         font-family: Montserrat;
         background-color: var(--main-color);
-        border-radius: 15px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,7 +65,7 @@
 
             .image {
               img {
-                border-radius: 15px;
+                border-radius: 10px;
                 max-width: 100%;
                 height: auto;
 
@@ -93,7 +92,7 @@
             figure {
               margin: 0;
               img {
-                border-radius: 15px;
+                border-radius: 10px;
                 max-width: 100%;
                 height: auto;
               }
