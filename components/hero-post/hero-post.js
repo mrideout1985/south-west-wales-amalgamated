@@ -26,7 +26,7 @@ const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => {
 			<div className={styles.postinfo}>
 				<div className={styles.title_date}>
 					<h3 className={styles.h3}>
-						<Link href={path.asPath === `/blog` ? `/posts/${slug}` : `/campaigns/${slug}`}>
+						<Link href={path.asPath === `/news` ? `/posts/${slug}` : `/campaigns/${slug}`}>
 							<a>{title}</a>
 						</Link>
 					</h3>
