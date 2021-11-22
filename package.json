@@ -6,11 +6,13 @@
     "build": "npm run build:sanity && pwd && npm run build:web",
     "build:web": "next build",
     "start:web": "next start",
+    "test": "jest --watch",
     "build:sanity": "cd studio && lerna bootstrap && sanity build ../public/studio -y && cd ..",
     "start:sanity": "cp .env ./studio/.env.development && cd studio && sanity start",
     "postinstall": "lerna bootstrap",
     "generate-icons": "npx @svgr/cli -d components/icons --ignore-existing public --ext=js"
-  },
+    
+    },
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.21.7",
@@ -31,11 +33,17 @@
     "@netlify/plugin-nextjs": "^4.0.0-beta.4",
     "@sanity/cli": "^2.21.7",
     "@svgr/cli": "^5.5.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "babel-preset-react-app": "^10.0.0",
     "css-loader": "^6.4.0",
     "file-loader": "^6.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
     "lerna": "^4.0.0",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.43.2",
     "sass-loader": "^12.2.0",
     "style-loader": "^3.3.1"
