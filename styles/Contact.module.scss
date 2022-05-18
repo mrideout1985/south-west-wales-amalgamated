@@ -1,81 +1,75 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-  .pagetitle {
-    width: 100%;
-    font-family: montserrat;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    @include respond(phone) {
-      flex-direction: column;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: var(--main-color);
-      padding: 0.2rem;
-
-      @include respond(tab-land) {
-        font-size: 2.2rem;
-      }
-
-      @include respond(phone) {
-        font-size: 2.2rem;
-      }
-    }
-
-    form {
-      input[type="search"] {
-        font-size: 2rem;
-        height: 3rem;
-        outline: none;
-        border: 2px solid var(--second-color);
-        color: var(--main-color);
-        line-height: 2rem;
+    .pagetitle {
+        width: 100%;
+        font-family: montserrat;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
         @include respond(phone) {
-          font-size: 2rem;
-          width: 100%;
+            flex-direction: column;
         }
 
-        &:focus {
-          border: none;
-          box-shadow: 0px 0px 2px 5px var(--main-color);
+        h1 {
+            font-size: 3rem;
+            color: var(--main-color);
+            padding: 0.2rem;
+
+            @include respond(tab-land) {
+                font-size: 2.2rem;
+            }
+
+            @include respond(phone) {
+                font-size: 2.2rem;
+            }
         }
 
-        &::placeholder {
-          color: var(--main-color);
-          font-size: 2rem;
+        form {
+            input[type="search"] {
+                height: 2rem;
+                outline: none;
+                border: 2px solid var(--second-color);
+                color: var(--main-color);
+                border-radius: 10px;
+
+                @include respond(phone) {
+                    font-size: 1rem;
+                    width: 100%;
+                }
+
+                &:focus {
+                    border: none;
+                    box-shadow: 0px 0px 2px 3px var(--main-color);
+                }
+
+                &::placeholder {
+                    color: var(--main-color);
+                }
+            }
         }
-      }
-    }
-  }
-
-  .cards {
-    background-color: var(--second-color);
-    border-radius: 10px;
-
-    ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 5rem 1rem 5rem 1rem;
-
-      li {
-      }
     }
 
-    @include respond(tab-port) {
-      padding: 1rem;
-    }
+    .cards {
+        background-color: var(--second-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
 
-    @include respond(phone) {
-      margin-top: 1rem;
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        @include respond(phone) {
+            margin-top: 1rem;
+        }
     }
-  }
 }

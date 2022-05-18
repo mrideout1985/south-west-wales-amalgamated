@@ -1,42 +1,52 @@
 @import "../sass/abstracts/mixins";
 
 .container {
-  margin: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  background-color: var(--second-color);
-  color: white;
-  border-radius: 10px;
+    margin: 0.5rem 1rem;
+    background-color: var(--second-color);
+    color: white;
+    border-radius: 10px;
+    min-height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-  .title {
-    font-family: Montserrat;
-    padding: 0.5rem 1rem;
-    h2 {
-      font-size: 3rem;
-      @include respond(phone) {
-        font-size: 1.5rem;
-      }
+    .title {
+        font-family: Montserrat;
+        padding: 0.5rem 1rem;
+        h2 {
+            font-size: 3rem;
+            @include respond(phone) {
+                font-size: 1.5rem;
+            }
+        }
     }
-  }
 
-  .post {
-    font-family: "Open Sans", sans-serif;
-    padding: 0 50px;
-    hr {
-      width: 100%;
-      border: none;
-      margin: 2rem 0;
-      height: 0.2rem;
-      background-color: var(--main-color);
-    }
-    p {
-      letter-spacing: 0.1rem;
-    }
-  }
+    .post {
+        font-family: "Open Sans", sans-serif;
+        padding: 0 1rem;
 
-  .avatar {
-    margin: 2rem 0 2rem 0;
-    padding: 0.5rem 1rem;
-  }
+        figure {
+            margin: 0;
+            padding: 0;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+        }
+
+        hr {
+            width: 100%;
+            border: none;
+            margin: 2rem 0;
+            height: 0.01rem;
+            background-color: white;
+        }
+        p {
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    .avatar {
+        margin: 2rem 0 2rem 0;
+        padding: 0.5rem 1rem;
+    }
 }

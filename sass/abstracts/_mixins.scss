@@ -10,27 +10,33 @@
 */
 
 @mixin respond($breakpoint) {
-	@if $breakpoint==phone {
-		@media (max-width: 660px) {
-			@content;
-		}
-	}
+    @if $breakpoint==phone {
+        @media (max-width: 660px) {
+            @content;
+        }
+    }
 
-	@if $breakpoint==tab-port {
-		@media (max-width: 800px) {
-			@content;
-		}
-	}
+    @if $breakpoint==tab-port {
+        @media (max-width: 800px) {
+            @content;
+        }
+    }
 
-	@if $breakpoint==tab-land {
-		@media (max-width: 1200px) {
-			@content;
-		}
-	}
+    @if $breakpoint==tab-land {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
 
-	@if $breakpoint==big-desktop {
-		@media (max-width: 1800px) {
-			@content;
-		}
-	}
+    @if $breakpoint==big-desktop {
+        @media (max-width: 1800px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==homePage {
+        @media (max-width: 1377px) {
+            @content;
+        }
+    }
 }

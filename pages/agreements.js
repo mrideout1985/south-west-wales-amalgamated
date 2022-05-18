@@ -9,12 +9,14 @@ const Agreements = ({ data }) => {
     const [selected, setIsSelected] = useState(0);
     const displayAgreement = useAgreement(agreement);
     const categoriesRef = useRef([]);
+    const defaultCategoryOnLoad = "998375c9-a066-4aee-a253-2e3f518595a9";
 
     useEffect(() => {
         categoriesRef.current = categoriesRef.current.slice(
             0,
             filterCategories().length
         );
+        setAgreement(defaultCategoryOnLoad);
     }, []);
 
     useEffect(() => {
@@ -86,12 +88,6 @@ const Agreements = ({ data }) => {
             );
         });
     };
-
-    useEffect(() => {
-        if (data && data[0].categories[0]) {
-            setAgreement(data[0].categories[0]._ref);
-        }
-    }, [data]);
 
     return (
         <div className={styles.agreements}>

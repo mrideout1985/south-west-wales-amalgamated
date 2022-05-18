@@ -1,89 +1,85 @@
 header {
-	.sidebar-component {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		transform: translateX(-100%);
-		transition: transform 0.15s ease;
-		box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-		z-index: 999;
-		background-color: white;
-		visibility: hidden;
-		display: flex;
-		align-items: flex-start;
-		flex-direction: column;
-		font-family: Montserrat;
-		justify-content: space-between;
-		width: 50%;
-		padding: 1rem 0.4rem;
+    .sidebar-component {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        transform: translateX(-100%);
+        transition: transform 0.15s ease;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        background-color: white;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-family: Montserrat;
 
-		.logo {
-			height: 100%;
-		}
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-left: -1rem;
+        }
 
-		.links {
-			height: 100%;
-			width: 100%;
+        .links {
+            display: flex;
+            flex-direction: column;
+            a {
+                text-decoration: none;
+                text-transform: capitalize;
+                color: var(--main-color);
+                font-size: 1.5rem;
+                margin: 1rem;
+            }
+        }
 
-			a {
-				margin-left: 1rem;
-				width: 100%;
-				text-decoration: none;
-				text-transform: capitalize;
-				color: var(--main-color);
-				font-size: 1.5rem;
-				margin-bottom: 1rem;
-				position: relative;
-			}
-		}
+        &-open {
+            transform: translateX(0);
+            visibility: visible;
+        }
 
-		&-open {
-			transform: translateX(0);
-			visibility: visible;
-		}
+        .close-btn {
+            position: fixed;
+            top: -1rem;
+            right: 0;
+            border: none;
+            outline: none;
+            background: none;
+            opacity: 0;
+            transition: all 3s;
+            z-index: 999;
 
-		.close-btn {
-			position: fixed;
-			top: -1rem;
-			right: 0;
-			border: none;
-			outline: none;
-			background: none;
-			opacity: 0;
-			transition: all 3s;
-			z-index: 999;
+            &[aria-expanded="true"] {
+                opacity: 1;
+            }
+        }
+    }
 
-			&[aria-expanded="true"] {
-				opacity: 1;
-			}
-		}
-	}
+    .sidebar-btn {
+        position: fixed;
+        top: 4rem;
+        left: 0.5rem;
+        transition: transform 0.15s ease;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 5px solid var(--main-color);
+        padding: 0.5rem;
+        z-index: 999;
+        background: #fff;
 
-	.sidebar-btn {
-		position: fixed;
-		top: 4rem;
-		left: 0.5rem;
-		transition: transform 0.15s ease;
-		outline: none;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 50%;
-		border: 5px solid var(--main-color);
-		padding: 0.5rem;
-		z-index: 999;
-		background: #fff;
+        &[aria-expanded="true"] {
+            z-index: 0;
+            transform: translateX(-4rem);
+        }
 
-		&[aria-expanded="true"] {
-			z-index: 0;
-			transform: translateX(-4rem);
-		}
-
-		&[aria-expanded="false"] {
-			z-index: 0;
-			transform: translateX(0);
-			transition-delay: 0.5s;
-		}
-	}
+        &[aria-expanded="false"] {
+            z-index: 0;
+            transform: translateX(0);
+            transition-delay: 0.5s;
+        }
+    }
 }
